@@ -3,311 +3,735 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్</title>
-  <meta name="description" content="Telugu Public Web Stories - ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు విజువల్ ఫార్మాట్‌లో.">
+  <title>Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్ హబ్</title>
+  <meta name="description" content="Telugu Public Web Stories - ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు ఆకర్షణీయమైన ఫుల్-స్క్రీన్ విజువల్ ఫార్మాట్‌లో.">
   <link rel="canonical" href="https://stories.telugupublic.com/">
   
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.telugupublic.com/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts: Mandali (Telugu) & Plus Jakarta Sans / Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: #151d30;
-      --accent: #E63946;
-      --accent-glow: rgba(230, 57, 70, 0.4);
-      --text: #F8FAFC;
-      --text-dim: #94A3B8;
-      --border: rgba(255, 255, 255, 0.08);
+      --bg-dark: #070a12;
+      --card-bg: rgba(21, 29, 48, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-hover-border: rgba(255, 107, 107, 0.5);
+      --text-main: #FFFFFF;
+      --text-sub: #94A3B8;
+      --accent-red: #FF4757;
+      --accent-glow: rgba(255, 71, 87, 0.35);
+      --gold-glow: rgba(245, 158, 11, 0.3);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mandali', sans-serif; }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Mandali', 'Plus Jakarta Sans', sans-serif;
+    }
+    
     body {
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(220, 38, 38, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
+    
+    /* ---------------- HEADER ---------------- */
     header {
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      gap: 16px;
     }
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      color: #fff;
-      text-decoration: none;
+    
+    .brand-logo {
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-    .logo span {
-      background: linear-gradient(135deg, #FF6B6B, #EE5253);
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-    .main-site-btn {
-      background: var(--card-bg);
-      color: #fff;
-      border: 1px solid var(--border);
-      padding: 8px 18px;
-      border-radius: 20px;
       text-decoration: none;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    
+    .brand-logo .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #FF4757, #FF6B81);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px var(--accent-glow);
+      font-size: 18px;
+    }
+    
+    .brand-logo .logo-badge {
+      background: linear-gradient(135deg, #FF6B6B, #EE5253);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .main-site-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 30px;
       font-size: 14px;
       font-weight: 600;
-      transition: all 0.2s ease;
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
-    .main-site-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
+    
+    .main-site-link:hover {
+      background: linear-gradient(135deg, #FF4757, #FF6B81);
+      border-color: transparent;
+      box-shadow: 0 6px 20px var(--accent-glow);
+      transform: translateY(-2px);
     }
-    .hero {
-      text-align: center;
+    
+    /* ---------------- HERO SECTION ---------------- */
+    .hero-section {
+      max-width: 1280px;
+      margin: 0 auto;
       padding: 40px 20px 20px;
+      width: 100%;
+      text-align: center;
     }
-    .hero h1 {
-      font-size: 32px;
+    
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 71, 87, 0.12);
+      border: 1px solid rgba(255, 71, 87, 0.3);
+      color: #FF6B81;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #FFFFFF, #CBD5E1);
+      margin-bottom: 16px;
+      animation: pulseGlow 2.5s infinite;
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 rgba(255, 71, 87, 0); }
+      50% { box-shadow: 0 0 20px rgba(255, 71, 87, 0.3); }
+    }
+    
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #FFFFFF 30%, #CBD5E1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero p {
-      font-size: 16px;
-      color: var(--text-dim);
-      max-width: 600px;
-      margin: 0 auto;
+    
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--text-sub);
+      max-width: 650px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
     }
+    
+    /* ---------------- SEARCH & FILTER CONTROLS ---------------- */
+    .controls-wrapper {
+      max-width: 800px;
+      margin: 0 auto 36px;
+    }
+    
+    .search-box-wrap {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .search-box-wrap input {
+      width: 100%;
+      background: rgba(21, 29, 48, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+      padding: 14px 24px 14px 48px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .search-box-wrap input:focus {
+      border-color: #FF4757;
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+    
+    .search-box-wrap svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      fill: var(--text-sub);
+      pointer-events: none;
+    }
+    
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .cat-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-sub);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .cat-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    
+    .cat-btn.active {
+      background: linear-gradient(135deg, #FF4757, #EE5253);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    
+    /* ---------------- STORIES GRID ---------------- */
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 24px 20px 60px;
+      padding: 0 20px 80px;
       width: 100%;
     }
+    
     .stories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
     }
+    
+    @media (max-width: 640px) {
+      .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .hero-title { font-size: 28px; }
+      .hero-subtitle { font-size: 14px; }
+    }
+    
+    /* ---------------- STORY CARD ---------------- */
     .story-card {
       position: relative;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 9 / 15;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+      aspect-ratio: 9 / 15.5;
+      background: #0f172a;
+      border: 1px solid var(--card-border);
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 18px 16px;
+      padding: 20px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+    
+    @media (max-width: 640px) {
+      .story-card {
+        padding: 14px 10px;
+        border-radius: 14px;
+      }
+    }
+    
     .story-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 16px var(--accent-glow);
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 71, 87, 0.3);
     }
-    .story-card img {
+    
+    .story-card img.poster-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
       z-index: 1;
     }
-    .story-card:hover img {
-      transform: scale(1.06);
+    
+    .story-card:hover img.poster-img {
+      transform: scale(1.08);
     }
+    
     .story-overlay {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(11,15,25,0.1) 0%, rgba(11,15,25,0.45) 40%, rgba(11,15,25,0.95) 100%);
+      background: linear-gradient(180deg, rgba(7, 10, 18, 0.1) 0%, rgba(7, 10, 18, 0.45) 45%, rgba(7, 10, 18, 0.96) 100%);
       z-index: 2;
     }
-    .story-content {
-      position: relative;
+    
+    .story-top-bar {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       z-index: 3;
     }
-    .story-badge {
-      display: inline-block;
-      padding: 3px 9px;
-      border-radius: 10px;
+    
+    .story-cat-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 8px;
       font-size: 11px;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
     }
+    
     .badge-health { background: linear-gradient(135deg, #10B981, #059669); }
-    .badge-festival { background: linear-gradient(135deg, #E67E22, #D35400); }
+    .badge-festival { background: linear-gradient(135deg, #F59E0B, #D97706); }
     .badge-devotional { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
     .badge-schemes { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
     .badge-jobs { background: linear-gradient(135deg, #9333EA, #7E22CE); }
     .badge-finance { background: linear-gradient(135deg, #0284C7, #0369A1); }
+    
+    .story-play-indicator {
+      width: 28px;
+      height: 28px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 12px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+    
+    .story-card:hover .story-play-indicator {
+      background: #FF4757;
+      border-color: #FF4757;
+      transform: scale(1.15);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    
+    .story-body {
+      position: relative;
+      z-index: 3;
+    }
+    
     .story-title {
       font-size: 16px;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.35;
-      margin-bottom: 6px;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 8px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.8);
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .story-date {
-      font-size: 12px;
-      color: var(--text-dim);
+    
+    @media (max-width: 640px) {
+      .story-title { font-size: 14px; line-height: 1.35; -webkit-line-clamp: 2; }
     }
+    
+    .story-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+    
+    .story-read-action {
+      color: #FF6B81;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.2s ease;
+    }
+    
+    .story-card:hover .story-read-action {
+      transform: translateX(4px);
+    }
+    
+    /* ---------------- FOOTER ---------------- */
     footer {
       margin-top: auto;
-      border-top: 1px solid var(--border);
-      padding: 24px;
+      background: rgba(11, 15, 25, 0.95);
+      border-top: 1px solid var(--card-border);
+      padding: 30px 20px;
       text-align: center;
-      font-size: 14px;
-      color: var(--text-dim);
     }
-    footer a { color: #fff; text-decoration: none; font-weight: 600; }
+    
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+    
+    .footer-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+    
+    .copyright-text {
+      font-size: 13px;
+      color: #64748B;
+    }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <a href="https://stories.telugupublic.com/" class="logo">
-      Telugu Public <span>Web Stories</span>
-    </a>
-    <a href="https://www.telugupublic.com/" class="main-site-btn">ముఖ్య వెబ్‌సైట్ →</a>
+    <div class="header-inner">
+      <a href="https://stories.telugupublic.com/" class="brand-logo">
+        <div class="logo-icon">🎬</div>
+        <span>Telugu Public</span>
+        <span class="logo-badge">Stories</span>
+      </a>
+      <div class="header-actions">
+        <a href="https://www.telugupublic.com/" class="main-site-link">
+          <span>హోమ్‌పేజ్</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>తాజా విజువల్ వెబ్ స్టోరీస్</h1>
-    <p>ఆరోగ్యం, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు & ఉద్యోగ సమాచారం ఒక్క క్లిక్‌తో తెలుసుకోండి.</p>
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-pill">
+      <span>⚡</span>
+      <span>Google Discover వెబ్ స్టోరీస్</span>
+    </div>
+    <h1 class="hero-title">తాజా విజువల్ వెబ్ స్టోరీస్ హబ్</h1>
+    <p class="hero-subtitle">ఆరోగ్యం, పండుగలు, ప్రభుత్వ పథకాలు, ఉద్యోగాలు & ఆధ్యాత్మిక సమాచారాన్ని ఒక్క క్లిక్‌తో ఫుల్-స్క్రీన్‌లో చూడండి.</p>
+    
+    <!-- SEARCH & CATEGORY FILTERS -->
+    <div class="controls-wrapper">
+      <div class="search-box-wrap">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="storySearchInput" placeholder="స్టోరీ టైటిల్ లేదా కీవర్డ్ శోధించండి... (Search stories)">
+      </div>
+      
+      <div class="category-pills">
+        <button class="cat-btn active" data-cat="all">అన్నీ (All)</button>
+        <button class="cat-btn" data-cat="పండుగలు">🌸 పండుగలు</button>
+        <button class="cat-btn" data-cat="ఆరోగ్యం">💧 ఆరోగ్యం</button>
+        <button class="cat-btn" data-cat="ప్రభుత్వ పథకాలు">🌾 పథకాలు</button>
+        <button class="cat-btn" data-cat="ఉద్యోగాలు">🎯 ఉద్యోగాలు</button>
+        <button class="cat-btn" data-cat="ఫైనాన్స్">📈 ఫైనాన్స్</button>
+        <button class="cat-btn" data-cat="ఆధ్యాత్మికం">🪔 ఆధ్యాత్మికం</button>
+      </div>
+    </div>
   </section>
 
+  <!-- STORIES CONTAINER -->
   <main class="container">
-    <div class="stories-grid">
+    <div class="stories-grid" id="storiesGrid">
       
-      <!-- STORY 1: VARALAKSHMI VRATHAM -->
-      <a href="./sravana-sukravaram-varalakshmi-vratham-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&h=1000&fit=crop" alt="Varalakshmi Vratham" loading="lazy">
+      <!-- STORY 1 -->
+      <a href="./sravana-sukravaram-varalakshmi-vratham-telugu.html" class="story-card" data-cat="పండుగలు">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&h=1000&fit=crop" alt="Varalakshmi Vratham" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-festival">పండుగలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-festival">పండుగలు</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">శ్రావణ శుక్రవారం వరలక్ష్మీ వ్రతం: కలశ స్థాపన &amp; పూజా విధానం</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 2: KIDNEY STONES -->
-      <a href="./kidney-stones-prevention-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=1000&fit=crop" alt="Kidney Stones Prevention" loading="lazy">
+      <!-- STORY 2 -->
+      <a href="./kidney-stones-prevention-telugu.html" class="story-card" data-cat="ఆరోగ్యం">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=1000&fit=crop" alt="Kidney Stones" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-health">ఆరోగ్య చిట్కాలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-health">ఆరోగ్యం</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">కిడ్నీలో రాళ్ళు రాకుండా ఉండాలంటే 5 ముఖ్యమైన జాగ్రత్తలు!</h2>
-          <div class="story-date">ఆగస్టు 2026 • 5 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 3: PM KISAN -->
-      <a href="./pm-kisan-19th-installment-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&h=1000&fit=crop" alt="PM Kisan 19th" loading="lazy">
+      <!-- STORY 3 -->
+      <a href="./pm-kisan-19th-installment-telugu.html" class="story-card" data-cat="ప్రభుత్వ పథకాలు">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&h=1000&fit=crop" alt="PM Kisan" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-schemes">రైతు సంక్షేమం</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-schemes">రైతు పథకాలు</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">పీఎం కిసాన్ 19వ విడత: మీ ఖాతాలో డబ్బులు పడ్డాయో లేదో ఇలా చెక్ చేయండి</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 4: APPSC GROUP 2 -->
-      <a href="./appsc-group2-preparation-tips-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=1000&fit=crop" alt="APPSC Group 2" loading="lazy">
+      <!-- STORY 4 -->
+      <a href="./appsc-group2-preparation-tips-telugu.html" class="story-card" data-cat="ఉద్యోగాలు">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=1000&fit=crop" alt="APPSC Group 2" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-jobs">ఉద్యోగాలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-jobs">ఉద్యోగాలు</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">APPSC గ్రూప్ 2: మొదటి ప్రయత్నంలోనే విజయం సాధించే 5 టిప్స్!</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 5: MUTUAL FUNDS SIP -->
-      <a href="./mutual-funds-sip-beginners-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=600&h=1000&fit=crop" alt="Mutual Funds SIP" loading="lazy">
+      <!-- STORY 5 -->
+      <a href="./mutual-funds-sip-beginners-telugu.html" class="story-card" data-cat="ఫైనాన్స్">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=600&h=1000&fit=crop" alt="Mutual Funds SIP" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-finance">ఫైనాన్స్</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-finance">ఫైనాన్స్</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">నెలకు రూ. 500 తో మ్యూచువల్ ఫండ్స్ SIP ఎలా ప్రారంభించాలి?</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 6: HAIR LOSS -->
-      <a href="./hair-loss-nutrition-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=1000&fit=crop" alt="Hair Loss Nutrition" loading="lazy">
+      <!-- STORY 6 -->
+      <a href="./hair-loss-nutrition-telugu.html" class="story-card" data-cat="ఆరోగ్యం">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=1000&fit=crop" alt="Hair Loss Nutrition" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-health">ఆరోగ్య చిట్కాలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-health">ఆరోగ్యం</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">జుట్టు ఎక్కువగా రాలుతోందా? కారణమయ్యే 5 ముఖ్యమైన లోపాలు!</h2>
-          <div class="story-date">ఆగస్టు 2026 • 6 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 7: RAKHI 2026 -->
-      <a href="./raksha-bandhan-2026-telugu.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?w=600&h=1000&fit=crop" alt="Raksha Bandhan" loading="lazy">
+      <!-- STORY 7 -->
+      <a href="./raksha-bandhan-2026-telugu.html" class="story-card" data-cat="పండుగలు">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?w=600&h=1000&fit=crop" alt="Raksha Bandhan" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-festival">పండుగ విశేషాలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-festival">పండుగలు</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">రాఖీ పండుగ 2026: శుభ ముహూర్తం &amp; రాశి ప్రకారం రంగులు</h2>
-          <div class="story-date">ఆగస్టు 2026 • 5 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 8: NARASIMHA SWAMY -->
-      <a href="./sri-lakshmi-narasimha-ashtottaram.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&h=1000&fit=crop" alt="Sri Lakshmi Narasimha Swamy" loading="lazy">
+      <!-- STORY 8 -->
+      <a href="./sri-lakshmi-narasimha-ashtottaram.html" class="story-card" data-cat="ఆధ్యాత్మికం">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&h=1000&fit=crop" alt="Narasimha Swamy" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-devotional">ఆధ్యాత్మికం</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-devotional">ఆధ్యాత్మికం</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">శ్రీ లక్ష్మీ నరసింహ స్వామి 108 దివ్య నామావళి &amp; పూజా ఫలితాలు</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
-      <!-- STORY 9: AP GOVT SCHEMES -->
-      <a href="./ap-govt-schemes-guide.html" class="story-card">
-        <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&h=1000&fit=crop" alt="AP Govt Schemes" loading="lazy">
+      <!-- STORY 9 -->
+      <a href="./ap-govt-schemes-guide.html" class="story-card" data-cat="ప్రభుత్వ పథకాలు">
+        <img class="poster-img" src="https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&h=1000&fit=crop" alt="Gov Schemes" loading="lazy">
         <div class="story-overlay"></div>
-        <div class="story-content">
-          <span class="story-badge badge-schemes">ప్రభుత్వ పథకాలు</span>
+        <div class="story-top-bar">
+          <span class="story-cat-badge badge-schemes">ప్రభుత్వ పథకాలు</span>
+          <div class="story-play-indicator">▶</div>
+        </div>
+        <div class="story-body">
           <h2 class="story-title">ఆంధ్రప్రదేశ్ సంక్షేమ పథకాలు – పూర్తి అర్హతలు &amp; ప్రయోజనాలు</h2>
-          <div class="story-date">ఆగస్టు 2026 • 4 స్లైడ్స్</div>
+          <div class="story-meta">
+            <span>ఆగస్టు 2026</span>
+            <span class="story-read-action">చూడండి →</span>
+          </div>
         </div>
       </a>
 
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 <a href="https://www.telugupublic.com/">Telugu Public</a>. All Rights Reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="https://www.telugupublic.com/">హోమ్‌పేజ్</a>
+        <a href="https://stories.telugupublic.com/sitemap.xml">సైట్‌మ్యాప్ (Sitemap)</a>
+        <a href="https://www.telugupublic.com/p/privacy-policy.html">గోప్యతా విధానం (Privacy)</a>
+        <a href="https://www.telugupublic.com/p/contact-us.html">సంప్రదించండి (Contact)</a>
+      </div>
+      <div class="copyright-text">
+        © 2026 <strong>Telugu Public</strong>. All Rights Reserved. Designed for Google Discover &amp; Web Stories.
+      </div>
+    </div>
   </footer>
+
+  <!-- CLIENT-SIDE FILTER & SEARCH SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('storySearchInput');
+      const catBtns = document.querySelectorAll('.cat-btn');
+      const cards = document.querySelectorAll('.story-card');
+
+      let currentCat = 'all';
+      let searchQuery = '';
+
+      function filterStories() {
+        cards.forEach(card => {
+          const title = card.querySelector('.story-title').textContent.toLowerCase();
+          const cat = card.getAttribute('data-cat') || '';
+          
+          const matchesCat = (currentCat === 'all' || cat.includes(currentCat) || currentCat.includes(cat));
+          const matchesSearch = title.includes(searchQuery);
+
+          if (matchesCat && matchesSearch) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCat = btn.getAttribute('data-cat');
+          filterStories();
+        });
+      });
+
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        filterStories();
+      });
+    });
+  </script>
+
 </body>
 </html>
