@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్</title>
-  <meta name="description" content="Telugu Public Web Stories - తాజా ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు విజువల్ ఫార్మాట్‌లో.">
+  <meta name="description" content="Telugu Public Web Stories - తాజా ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు ఆకర్షణీయమైన విజువల్ ఫార్మాట్‌లో.">
   <link rel="canonical" href="https://stories.telugupublic.com/">
   
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.telugupublic.com/favicon.ico" type="image/x-icon">
+  <!-- Favicon / Logo -->
+  <link rel="icon" href="./TeluguPublic.png" type="image/png">
   
-  <!-- Fonts -->
+  <!-- Google Fonts: Mandali (Telugu) & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* Telugu Public Official Color Palette */
     :root {
-      --tp-red: #E63946;
-      --tp-red-dark: #C1121F;
-      --tp-red-glow: rgba(230, 57, 70, 0.4);
-      --tp-navy: #0F172A;
-      --tp-navy-card: #1E293B;
-      --tp-navy-border: rgba(255, 255, 255, 0.09);
-      --tp-bg-dark: #090D16;
-      --tp-text-main: #FFFFFF;
-      --tp-text-dim: #94A3B8;
-      --tp-gold: #F59E0B;
+      --tp-red: #DC2626;
+      --tp-red-hover: #B91C1C;
+      --tp-red-light: #FEE2E2;
+      --tp-bg: #F8FAFC;
+      --tp-card-bg: #FFFFFF;
+      --tp-border: #E2E8F0;
+      --tp-text-title: #0F172A;
+      --tp-text-body: #334155;
+      --tp-text-muted: #64748B;
+      --tp-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --tp-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     }
     
     * {
@@ -38,29 +38,27 @@
     }
     
     body {
-      background-color: var(--tp-bg-dark);
+      background-color: var(--tp-bg);
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(230, 57, 70, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 90% 15%, rgba(30, 58, 138, 0.14) 0%, transparent 45%),
-        radial-gradient(circle at 50% 85%, rgba(230, 57, 70, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 10% 10%, rgba(220, 38, 38, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 15%, rgba(59, 130, 246, 0.04) 0%, transparent 40%);
       background-attachment: fixed;
-      color: var(--tp-text-main);
+      color: var(--tp-text-body);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
     
-    /* ---------------- HEADER ---------------- */
+    /* ---------------- HEADER (LIGHT) ---------------- */
     header {
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 2px solid var(--tp-red);
-      padding: 14px 24px;
+      background: #FFFFFF;
+      border-top: 3px solid var(--tp-red);
+      border-bottom: 1px solid var(--tp-border);
+      padding: 12px 24px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: var(--tp-shadow);
     }
     
     .header-inner {
@@ -75,61 +73,60 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
-      color: #ffffff;
-      font-size: 23px;
+      color: var(--tp-text-title);
+    }
+    
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    .brand-logo-text {
+      font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
+      line-height: 1.1;
+      color: #1E293B;
     }
     
-    .brand-logo .logo-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--tp-red), var(--tp-red-dark));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px var(--tp-red-glow);
-      font-size: 19px;
-    }
-    
-    .brand-logo .logo-title span {
+    .brand-logo-text span {
       color: var(--tp-red);
     }
     
-    .brand-logo .logo-badge {
-      background: var(--tp-red);
-      color: #fff;
+    .logo-badge {
+      background: var(--tp-red-light);
+      color: var(--tp-red);
       font-size: 11px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px var(--tp-red-glow);
+      border: 1px solid rgba(220, 38, 38, 0.2);
     }
     
     .main-site-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      padding: 8px 18px;
+      background: var(--tp-red);
+      color: #FFFFFF;
+      padding: 9px 20px;
       border-radius: 30px;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
       transition: all 0.25s ease;
     }
     
     .main-site-btn:hover {
-      background: var(--tp-red);
-      border-color: var(--tp-red);
-      box-shadow: 0 6px 20px var(--tp-red-glow);
+      background: var(--tp-red-hover);
+      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
       transform: translateY(-2px);
     }
     
@@ -146,29 +143,28 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(230, 57, 70, 0.12);
-      border: 1px solid rgba(230, 57, 70, 0.35);
-      color: #FF808A;
+      background: #FFFFFF;
+      border: 1px solid var(--tp-border);
+      color: var(--tp-red);
       padding: 6px 16px;
       border-radius: 30px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      box-shadow: var(--tp-shadow);
     }
     
     .hero-title {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       line-height: 1.3;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #FFFFFF 30%, #E2E8F0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      color: var(--tp-text-title);
     }
     
     .hero-subtitle {
       font-size: 16px;
-      color: var(--tp-text-dim);
+      color: var(--tp-text-muted);
       max-width: 650px;
       margin: 0 auto 26px;
       line-height: 1.6;
@@ -187,21 +183,20 @@
     
     .search-box-wrap input {
       width: 100%;
-      background: rgba(30, 41, 59, 0.85);
-      border: 1px solid var(--tp-navy-border);
+      background: #FFFFFF;
+      border: 1px solid var(--tp-border);
       border-radius: 30px;
       padding: 14px 24px 14px 48px;
-      color: #fff;
+      color: var(--tp-text-title);
       font-size: 15px;
       outline: none;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s ease;
+      box-shadow: var(--tp-shadow);
     }
     
     .search-box-wrap input:focus {
       border-color: var(--tp-red);
-      box-shadow: 0 6px 25px var(--tp-red-glow);
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
     }
     
     .search-box-wrap svg {
@@ -211,7 +206,7 @@
       transform: translateY(-50%);
       width: 20px;
       height: 20px;
-      fill: var(--tp-text-dim);
+      fill: var(--tp-text-muted);
       pointer-events: none;
     }
     
@@ -223,37 +218,39 @@
     }
     
     .cat-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--tp-text-dim);
+      background: #FFFFFF;
+      border: 1px solid var(--tp-border);
+      color: var(--tp-text-muted);
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       display: flex;
       align-items: center;
       gap: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
     .cat-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #ffffff;
+      background: #F1F5F9;
+      color: var(--tp-text-title);
+      border-color: #CBD5E1;
       transform: translateY(-2px);
     }
     
     .cat-btn.active {
-      background: linear-gradient(135deg, var(--tp-red), var(--tp-red-dark));
-      border-color: transparent;
-      color: #ffffff;
-      box-shadow: 0 4px 16px var(--tp-red-glow);
+      background: var(--tp-red);
+      border-color: var(--tp-red);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
     }
     
     .stories-count-bar {
       margin-top: 14px;
       font-size: 13px;
-      color: var(--tp-text-dim);
+      color: var(--tp-text-muted);
       font-weight: 600;
     }
     
@@ -276,7 +273,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
       }
-      .hero-title { font-size: 28px; }
+      .hero-title { font-size: 26px; }
       .hero-subtitle { font-size: 14px; }
     }
     
@@ -286,14 +283,14 @@
       border-radius: 18px;
       overflow: hidden;
       aspect-ratio: 9 / 15.5;
-      background: var(--tp-navy);
-      border: 1px solid var(--tp-navy-border);
+      background: #0F172A;
+      border: 1px solid var(--tp-border);
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 18px 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: var(--tp-shadow);
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
@@ -306,8 +303,8 @@
     
     .story-card:hover {
       transform: translateY(-8px) scale(1.02);
-      border-color: rgba(230, 57, 70, 0.6);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.7), 0 0 20px var(--tp-red-glow);
+      border-color: var(--tp-red);
+      box-shadow: var(--tp-shadow-hover);
     }
     
     .story-card img.poster-img {
@@ -331,7 +328,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(9, 13, 22, 0.1) 0%, rgba(9, 13, 22, 0.45) 45%, rgba(9, 13, 22, 0.96) 100%);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(15, 23, 42, 0.95) 100%);
       z-index: 2;
     }
     
@@ -354,7 +351,7 @@
       font-size: 11px;
       font-weight: 700;
       color: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       backdrop-filter: blur(8px);
     }
     
@@ -368,8 +365,8 @@
     .story-play-indicator {
       width: 28px;
       height: 28px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -384,7 +381,7 @@
       background: var(--tp-red);
       border-color: var(--tp-red);
       transform: scale(1.15);
-      box-shadow: 0 0 12px var(--tp-red-glow);
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.6);
     }
     
     .story-body {
@@ -395,7 +392,7 @@
     .story-title {
       font-size: 16px;
       font-weight: 700;
-      color: #ffffff;
+      color: #FFFFFF;
       line-height: 1.4;
       margin-bottom: 8px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.8);
@@ -414,11 +411,11 @@
       align-items: center;
       justify-content: space-between;
       font-size: 12px;
-      color: var(--tp-text-dim);
+      color: #CBD5E1;
     }
     
     .story-read-action {
-      color: #FF808A;
+      color: #FFA4AD;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -428,11 +425,12 @@
     
     .story-card:hover .story-read-action {
       transform: translateX(4px);
+      color: #FFFFFF;
     }
     
-    /* Loading Skeleton */
+    /* Loading Skeleton (Light Mode) */
     .story-skeleton {
-      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background: linear-gradient(90deg, #E2E8F0 25%, #F1F5F9 50%, #E2E8F0 75%);
       background-size: 200% 100%;
       animation: skeletonPulse 1.5s infinite;
       border-radius: 18px;
@@ -448,20 +446,20 @@
       grid-column: 1 / -1;
       text-align: center;
       padding: 60px 20px;
-      color: var(--tp-text-dim);
+      color: var(--tp-text-muted);
     }
     .empty-state h3 {
       font-size: 20px;
-      color: #ffffff;
+      color: var(--tp-text-title);
       margin-bottom: 8px;
     }
     
-    /* ---------------- FOOTER ---------------- */
+    /* ---------------- FOOTER (LIGHT) ---------------- */
     footer {
       margin-top: auto;
-      background: rgba(15, 23, 42, 0.95);
-      border-top: 1px solid var(--tp-navy-border);
-      padding: 30px 20px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--tp-border);
+      padding: 32px 20px;
       text-align: center;
     }
     
@@ -471,7 +469,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--tp-text-title);
+      font-weight: 800;
+      font-size: 18px;
     }
     
     .footer-links {
@@ -483,7 +491,7 @@
     }
     
     .footer-links a {
-      color: var(--tp-text-dim);
+      color: var(--tp-text-muted);
       text-decoration: none;
       font-weight: 600;
       transition: color 0.2s ease;
@@ -495,7 +503,7 @@
     
     .copyright-text {
       font-size: 13px;
-      color: #64748B;
+      color: #94A3B8;
     }
   </style>
 </head>
@@ -505,8 +513,8 @@
   <header>
     <div class="header-inner">
       <a href="https://stories.telugupublic.com/" class="brand-logo">
-        <div class="logo-icon">⚡</div>
-        <div class="logo-title">Telugu<span>Public</span></div>
+        <img src="./TeluguPublic.png" alt="Telugu Public Logo" class="brand-logo-img">
+        <div class="brand-logo-text">Telugu<span>Public</span></div>
         <span class="logo-badge">Web Stories</span>
       </a>
       <div class="header-actions">
@@ -562,8 +570,12 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
+      <a href="https://stories.telugupublic.com/" class="footer-brand">
+        <img src="./TeluguPublic.png" alt="Telugu Public Logo" style="width: 32px; height: 32px; object-fit: contain;">
+        <span>Telugu Public Web Stories</span>
+      </a>
       <div class="footer-links">
-        <a href="https://www.telugupublic.com/">హోమ్‌పేజ్ (Home)</a>
+        <a href="https://www.telugupublic.com/">ముఖ్య వెబ్‌సైట్ (Home)</a>
         <a href="https://stories.telugupublic.com/sitemap.xml">సైట్‌మ్యాప్ (Sitemap)</a>
         <a href="https://www.telugupublic.com/p/privacy-policy.html">గోప్యతా విధానం (Privacy)</a>
         <a href="https://www.telugupublic.com/p/contact-us.html">సంప్రదించండి (Contact)</a>
@@ -649,7 +661,6 @@
         })
         .catch(err => {
           console.warn('Fallback loading:', err);
-          // Retry absolute URL if local fails
           fetch('https://stories.telugupublic.com/stories.json')
             .then(r => r.json())
             .then(data => {
