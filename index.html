@@ -16,10 +16,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
+    /* Telugu Public Official Green & Navy Light Palette */
     :root {
-      --tp-red: #DC2626;
-      --tp-red-hover: #B91C1C;
-      --tp-red-light: #FEE2E2;
+      --tp-green: #16A34A;
+      --tp-green-dark: #15803D;
+      --tp-green-light: #DCFCE7;
+      --tp-green-glow: rgba(22, 163, 74, 0.35);
+      --tp-navy: #1E293B;
+      --tp-blue: #2563EB;
       --tp-bg: #F8FAFC;
       --tp-card-bg: #FFFFFF;
       --tp-border: #E2E8F0;
@@ -40,8 +44,8 @@
     body {
       background-color: var(--tp-bg);
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(220, 38, 38, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 90% 15%, rgba(59, 130, 246, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 10% 10%, rgba(22, 163, 74, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 15%, rgba(37, 99, 235, 0.04) 0%, transparent 40%);
       background-attachment: fixed;
       color: var(--tp-text-body);
       min-height: 100vh;
@@ -49,10 +53,10 @@
       flex-direction: column;
     }
     
-    /* ---------------- HEADER (LIGHT) ---------------- */
+    /* ---------------- HEADER (CLEAN LIGHT & GREEN) ---------------- */
     header {
       background: #FFFFFF;
-      border-top: 3px solid var(--tp-red);
+      border-top: 3px solid var(--tp-green);
       border-bottom: 1px solid var(--tp-border);
       padding: 12px 24px;
       position: sticky;
@@ -90,43 +94,43 @@
       font-weight: 800;
       letter-spacing: -0.5px;
       line-height: 1.1;
-      color: #1E293B;
+      color: var(--tp-navy);
     }
     
     .brand-logo-text span {
-      color: var(--tp-red);
+      color: var(--tp-green);
     }
     
     .logo-badge {
-      background: var(--tp-red-light);
-      color: var(--tp-red);
+      background: var(--tp-green-light);
+      color: var(--tp-green-dark);
       font-size: 11px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border: 1px solid rgba(220, 38, 38, 0.2);
+      border: 1px solid rgba(22, 163, 74, 0.25);
     }
     
     .main-site-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--tp-red);
+      background: var(--tp-green);
       color: #FFFFFF;
       padding: 9px 20px;
       border-radius: 30px;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+      box-shadow: 0 4px 12px var(--tp-green-glow);
       transition: all 0.25s ease;
     }
     
     .main-site-btn:hover {
-      background: var(--tp-red-hover);
-      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+      background: var(--tp-green-dark);
+      box-shadow: 0 6px 18px var(--tp-green-glow);
       transform: translateY(-2px);
     }
     
@@ -145,7 +149,7 @@
       gap: 8px;
       background: #FFFFFF;
       border: 1px solid var(--tp-border);
-      color: var(--tp-red);
+      color: var(--tp-green-dark);
       padding: 6px 16px;
       border-radius: 30px;
       font-size: 13px;
@@ -195,8 +199,8 @@
     }
     
     .search-box-wrap input:focus {
-      border-color: var(--tp-red);
-      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+      border-color: var(--tp-green);
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
     }
     
     .search-box-wrap svg {
@@ -241,10 +245,10 @@
     }
     
     .cat-btn.active {
-      background: var(--tp-red);
-      border-color: var(--tp-red);
+      background: var(--tp-green);
+      border-color: var(--tp-green);
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+      box-shadow: 0 4px 12px var(--tp-green-glow);
     }
     
     .stories-count-bar {
@@ -303,7 +307,7 @@
     
     .story-card:hover {
       transform: translateY(-8px) scale(1.02);
-      border-color: var(--tp-red);
+      border-color: var(--tp-green);
       box-shadow: var(--tp-shadow-hover);
     }
     
@@ -378,10 +382,10 @@
     }
     
     .story-card:hover .story-play-indicator {
-      background: var(--tp-red);
-      border-color: var(--tp-red);
+      background: var(--tp-green);
+      border-color: var(--tp-green);
       transform: scale(1.15);
-      box-shadow: 0 0 12px rgba(220, 38, 38, 0.6);
+      box-shadow: 0 0 12px var(--tp-green-glow);
     }
     
     .story-body {
@@ -415,7 +419,7 @@
     }
     
     .story-read-action {
-      color: #FFA4AD;
+      color: #86EFAC;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -498,7 +502,7 @@
     }
     
     .footer-links a:hover {
-      color: var(--tp-red);
+      color: var(--tp-green);
     }
     
     .copyright-text {
