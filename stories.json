@@ -1,13 +1,5 @@
 [
   {
-    "title": "శ్రీ లక్ష్మీ నరసింహ స్వామి అష్టోత్తర శతనామావళి",
-    "category": "ఆధ్యాత్మికం",
-    "badgeClass": "badge-devotional",
-    "url": "https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1080&h=1920&fit=crop",
-    "date": "2026-08-29"
-  },
-  {
     "title": "AP ప్రభుత్వ సంక్షేమ పథకాలు & అర్హతల గైడ్",
     "category": "ప్రభుత్వ పథకాలు",
     "badgeClass": "badge-schemes",
@@ -69,6 +61,14 @@
     "badgeClass": "badge-festival",
     "url": "https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html",
     "image": "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=1080&h=1920&fit=crop",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "శ్రీ లక్ష్మీ నరసింహ స్వామి అష్టోత్తర శతనామావళి",
+    "category": "ఆధ్యాత్మికం",
+    "badgeClass": "badge-devotional",
+    "url": "https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html",
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1080&h=1920&fit=crop",
     "date": "2026-08-29"
   }
 ]
