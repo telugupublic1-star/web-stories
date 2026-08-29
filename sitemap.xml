@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stories.telugupublic.com/</loc>
-    <lastmod>2026-08-29T02:21:45.493Z</lastmod>
+    <lastmod>2026-08-29T03:18:24.301Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/ap-govt-schemes-guide.html</loc>
+    <lastmod>2026-08-29T03:18:13.393Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
@@ -15,6 +21,12 @@
   <url>
     <loc>https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html</loc>
     <lastmod>2026-08-29T02:21:23.844Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html</loc>
+    <lastmod>2026-08-29T03:18:00.559Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
