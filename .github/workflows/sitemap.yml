@@ -1,0 +1,43 @@
+name: Dynamic Sitemap Generator
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Generate Dynamic Sitemap
+        run: node build_sitemap.js
+
+      - name: Commit and Push Updated Sitemap
+        run: |
+          git config --global user.name "TeluguPublic Bot"
+          git config --global user.email "telugupublic1@gmail.com"
+          git add sitemap.xml
+          if git diff --staged --quiet; then
+            echo "No changes in sitemap.xml"
+          else
+            git commit -m "🤖 Auto-regenerate dynamic sitemap.xml [skip ci]"
+            git push origin main
+          fi
