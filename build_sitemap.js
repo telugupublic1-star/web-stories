@@ -22,6 +22,8 @@ function escapeXml(unsafe) {
   });
 }
 
+const storiesData = [];
+
 const urls = files.map(file => {
   const filePath = path.join(storiesDir, file);
   const content = fs.readFileSync(filePath, 'utf8');
@@ -34,8 +36,46 @@ const urls = files.map(file => {
     lastmod = dateMatch[1].split('T')[0];
   }
 
-  // Extract poster image for Google Discover Image Sitemap if present
+  // Extract poster image
   const posterMatch = content.match(/poster-portrait-src="([^"]+)"/);
+  const posterUrl = posterMatch && posterMatch[1] ? posterMatch[1] : 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=450&h=750&fit=crop';
+
+  // Extract title
+  let title = file.replace(/-/g, ' ').replace('.html', '');
+  const titleMatch = content.match(/<title>([^<|]+)/);
+  if (titleMatch && titleMatch[1]) {
+    title = titleMatch[1].trim();
+  }
+
+  // Extract brand / category
+  let category = 'ఆరోగ్యం';
+  let badgeClass = 'badge-health';
+  if (file.includes('vratham') || file.includes('raksha') || file.includes('festival')) {
+    category = 'పండుగలు';
+    badgeClass = 'badge-festival';
+  } else if (file.includes('narasimha') || file.includes('ashtottaram') || file.includes('spiritual')) {
+    category = 'ఆధ్యాత్మికం';
+    badgeClass = 'badge-devotional';
+  } else if (file.includes('kisan') || file.includes('schemes') || file.includes('govt')) {
+    category = 'ప్రభుత్వ పథకాలు';
+    badgeClass = 'badge-schemes';
+  } else if (file.includes('appsc') || file.includes('job') || file.includes('education')) {
+    category = 'ఉద్యోగాలు';
+    badgeClass = 'badge-jobs';
+  } else if (file.includes('mutual') || file.includes('sip') || file.includes('finance') || file.includes('stock')) {
+    category = 'ఫైనాన్స్';
+    badgeClass = 'badge-finance';
+  }
+
+  storiesData.push({
+    title,
+    category,
+    badgeClass,
+    url: `https://stories.telugupublic.com/${file}`,
+    image: posterUrl,
+    date: lastmod
+  });
+
   const imageTag = posterMatch && posterMatch[1] ? `
     <image:image>
       <image:loc>${escapeXml(posterMatch[1])}</image:loc>
@@ -49,6 +89,7 @@ const urls = files.map(file => {
   </url>`;
 }).join('\n');
 
+// 1. Generate sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -62,4 +103,9 @@ ${urls}
 </urlset>`;
 
 fs.writeFileSync(path.join(storiesDir, 'sitemap.xml'), sitemap, 'utf8');
-console.log(`✅ Dynamic sitemap.xml successfully generated with ${files.length + 1} URLs!`);
+
+// 2. Generate stories.json (Dynamic Feed for Main Website)
+fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(storiesData, null, 2), 'utf8');
+
+console.log(`✅ sitemap.xml generated with ${files.length + 1} URLs!`);
+console.log(`✅ stories.json dynamic feed generated with ${storiesData.length} stories!`);

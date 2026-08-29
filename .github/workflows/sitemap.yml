@@ -1,4 +1,4 @@
-name: Dynamic Sitemap Generator
+name: Dynamic Sitemap & Stories Feed Generator
 
 on:
   push:
@@ -27,17 +27,17 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Generate Dynamic Sitemap
+      - name: Generate Dynamic Sitemap & Feed
         run: node build_sitemap.js
 
-      - name: Commit and Push Updated Sitemap
+      - name: Commit and Push Updated Sitemap & Stories Feed
         run: |
           git config --global user.name "TeluguPublic Bot"
           git config --global user.email "telugupublic1@gmail.com"
-          git add sitemap.xml
+          git add sitemap.xml stories.json
           if git diff --staged --quiet; then
-            echo "No changes in sitemap.xml"
+            echo "No changes in sitemap.xml or stories.json"
           else
-            git commit -m "🤖 Auto-regenerate dynamic sitemap.xml [skip ci]"
+            git commit -m "🤖 Auto-regenerate dynamic sitemap.xml and stories.json [skip ci]"
             git push origin main
           fi
