@@ -8,12 +8,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html</loc>
+    <loc>https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://stories.telugupublic.com/images/lakshmi_narasimha.jpg</image:loc>
+      <image:loc>https://stories.telugupublic.com/images/raksha_bandhan.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -26,30 +26,12 @@
     </image:image>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html</loc>
+    <loc>https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://stories.telugupublic.com/images/raksha_bandhan.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/pm-kisan-19th-installment-telugu.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://stories.telugupublic.com/images/pm_kisan_farmer.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/mutual-funds-sip-beginners-telugu.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://stories.telugupublic.com/images/mutual_funds_sip.jpg</image:loc>
+      <image:loc>https://stories.telugupublic.com/images/lakshmi_narasimha.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -62,12 +44,21 @@
     </image:image>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
+    <loc>https://stories.telugupublic.com/mutual-funds-sip-beginners-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://stories.telugupublic.com/images/hair_loss_nutrition.jpg</image:loc>
+      <image:loc>https://stories.telugupublic.com/images/mutual_funds_sip.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/pm-kisan-19th-installment-telugu.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stories.telugupublic.com/images/pm_kisan_farmer.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -86,6 +77,15 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://stories.telugupublic.com/images/appsc_group2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stories.telugupublic.com/images/hair_loss_nutrition.jpg</image:loc>
     </image:image>
   </url>
 </urlset>
