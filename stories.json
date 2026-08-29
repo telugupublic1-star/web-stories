@@ -1,5 +1,21 @@
 [
   {
+    "title": "AP ప్రభుత్వ సంక్షేమ పథకాలు & అర్హతల గైడ్",
+    "category": "ప్రభుత్వ పథకాలు",
+    "badgeClass": "badge-schemes",
+    "url": "https://stories.telugupublic.com/ap-govt-schemes-guide.html",
+    "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&h=1920&fit=crop",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "APPSC గ్రూప్ 2 ప్రిపరేషన్: మొదటి ప్రయత్నంలోనే విజయం సాధించే 5 టిప్స్",
+    "category": "ఉద్యోగాలు",
+    "badgeClass": "badge-jobs",
+    "url": "https://stories.telugupublic.com/appsc-group2-preparation-tips-telugu.html",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1080&h=1920&fit=crop",
+    "date": "2026-08-29"
+  },
+  {
     "title": "జుట్టు రాలడానికి 5 ప్రధాన పోషకాహార లోపాలు",
     "category": "ఆరోగ్యం",
     "badgeClass": "badge-health",
@@ -53,22 +69,6 @@
     "badgeClass": "badge-devotional",
     "url": "https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html",
     "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1080&h=1920&fit=crop",
-    "date": "2026-08-29"
-  },
-  {
-    "title": "AP ప్రభుత్వ సంక్షేమ పథకాలు & అర్హతల గైడ్",
-    "category": "ప్రభుత్వ పథకాలు",
-    "badgeClass": "badge-schemes",
-    "url": "https://stories.telugupublic.com/ap-govt-schemes-guide.html",
-    "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&h=1920&fit=crop",
-    "date": "2026-08-29"
-  },
-  {
-    "title": "APPSC గ్రూప్ 2 ప్రిపరేషన్: మొదటి ప్రయత్నంలోనే విజయం సాధించే 5 టిప్స్",
-    "category": "ఉద్యోగాలు",
-    "badgeClass": "badge-jobs",
-    "url": "https://stories.telugupublic.com/appsc-group2-preparation-tips-telugu.html",
-    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1080&h=1920&fit=crop",
     "date": "2026-08-29"
   }
 ]

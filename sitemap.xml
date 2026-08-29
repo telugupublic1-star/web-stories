@@ -8,6 +8,24 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://stories.telugupublic.com/ap-govt-schemes-guide.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&amp;h=1920&amp;fit=crop</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/appsc-group2-preparation-tips-telugu.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1080&amp;h=1920&amp;fit=crop</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
@@ -68,24 +86,6 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?w=1080&amp;h=1920&amp;fit=crop</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/ap-govt-schemes-guide.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&amp;h=1920&amp;fit=crop</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/appsc-group2-preparation-tips-telugu.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1080&amp;h=1920&amp;fit=crop</image:loc>
     </image:image>
   </url>
 </urlset>
