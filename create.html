@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telugu Public • Web Story Creator Studio</title>
+  <meta name="description" content="Telugu Public Web Story Creator - Easily create, preview and export 100% AMP-compliant Google Discover Web Stories.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.telugupublic.com/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts: Mandali (Telugu) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --tp-red: #E63946;
+      --tp-red-dark: #C1121F;
+      --tp-red-glow: rgba(230, 57, 70, 0.4);
+      --tp-navy: #0F172A;
+      --tp-card-bg: #1E293B;
+      --tp-card-border: rgba(255, 255, 255, 0.1);
+      --tp-bg-dark: #090D16;
+      --tp-text-main: #FFFFFF;
+      --tp-text-dim: #94A3B8;
+      --tp-gold: #F59E0B;
+      --tp-green: #10B981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Mandali', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--tp-bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(230, 57, 70, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 90% 15%, rgba(30, 58, 138, 0.14) 0%, transparent 45%);
+      background-attachment: fixed;
+      color: var(--tp-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid var(--tp-red);
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .header-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .brand-logo .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--tp-red), var(--tp-red-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 15px var(--tp-red-glow);
+    }
+
+    .brand-logo .badge-studio {
+      background: linear-gradient(135deg, var(--tp-red), var(--tp-red-dark));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--tp-red), var(--tp-red-dark));
+      color: #fff;
+      box-shadow: 0 4px 15px var(--tp-red-glow);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 22px var(--tp-red-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    }
+    .btn-green:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+
+    /* ---------------- STUDIO MAIN LAYOUT ---------------- */
+    .studio-container {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      flex: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .studio-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------------- LEFT PANEL: EDITOR ---------------- */
+    .editor-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-card {
+      background: var(--tp-card-bg);
+      border: 1px solid var(--tp-card-border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--tp-text-dim);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--tp-red);
+      box-shadow: 0 0 12px var(--tp-red-glow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* Template Presets Bar */
+    .template-presets {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tpl-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #E2E8F0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tpl-chip:hover {
+      background: var(--tp-red);
+      border-color: var(--tp-red);
+      color: #fff;
+    }
+
+    /* Slide Item Accordion */
+    .slide-item-card {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .slide-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .slide-badge-label {
+      background: rgba(230, 57, 70, 0.2);
+      color: #FF808A;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .btn-del-slide {
+      background: none;
+      border: none;
+      color: #EF4444;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 2px 6px;
+    }
+    .btn-del-slide:hover { text-decoration: underline; }
+
+    /* ---------------- RIGHT PANEL: LIVE SIMULATOR ---------------- */
+    .preview-panel {
+      position: sticky;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .simulator-wrapper {
+      width: 340px;
+      height: 600px;
+      background: #000;
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 57, 70, 0.2);
+      border: 4px solid #334155;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 18px;
+      background: #334155;
+      border-radius: 0 0 12px 12px;
+      margin: 0 auto 6px;
+      z-index: 100;
+    }
+
+    .story-live-screen {
+      flex: 1;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      background: #0b0f19;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .preview-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(11,15,25,0.15) 0%, rgba(11,15,25,0.55) 45%, rgba(11,15,25,0.96) 100%);
+      z-index: 2;
+    }
+
+    .preview-progress-bar {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      gap: 4px;
+      z-index: 10;
+    }
+
+    .progress-segment {
+      flex: 1;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }
+    .progress-segment.active {
+      background: #ffffff;
+      box-shadow: 0 0 6px #fff;
+    }
+
+    .preview-card-box {
+      position: relative;
+      z-index: 3;
+      background: rgba(15, 23, 42, 0.86);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 16px 14px;
+      color: #fff;
+    }
+
+    .preview-brand-tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--tp-red);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .preview-title-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .preview-desc-text {
+      font-size: 12px;
+      color: #CBD5E1;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .preview-bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+    .preview-bullet-list li {
+      font-size: 11px;
+      color: #CBD5E1;
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 4px;
+    }
+    .preview-bullet-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--tp-gold);
+      font-size: 10px;
+    }
+
+    .preview-cta-btn {
+      display: block;
+      background: var(--tp-red);
+      color: #fff;
+      text-align: center;
+      padding: 6px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 6px;
+    }
+
+    .simulator-nav-bar {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Modal code viewer */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal-content {
+      background: var(--tp-navy);
+      border: 1px solid var(--tp-card-border);
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 { font-size: 17px; font-weight: 700; color: #fff; }
+    .btn-close-modal { background: none; border: none; color: #94A3B8; font-size: 20px; cursor: pointer; }
+
+    .modal-body {
+      padding: 16px 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .modal-body textarea {
+      width: 100%;
+      height: 400px;
+      background: #090D16;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px;
+      color: #38BDF8;
+      font-family: monospace;
+      font-size: 12px;
+      resize: vertical;
+    }
+
+    .modal-footer {
+      padding: 14px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="https://stories.telugupublic.com/" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <span>Telugu Public</span>
+        <span class="badge-studio">Story Studio</span>
+      </a>
+      <div class="header-actions">
+        <a href="./index.html" class="btn-action btn-outline">← వెబ్ స్టోరీస్ హబ్</a>
+        <button id="btnViewCode" class="btn-action btn-outline">👁️ View AMP Code</button>
+        <button id="btnDownloadHtml" class="btn-action btn-green">💾 Download Story HTML</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN STUDIO -->
+  <main class="studio-container">
+    
+    <!-- LEFT PANEL: STORY BUILDER -->
+    <div class="editor-panel">
+      
+      <!-- Quick Template Presets -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span>✨</span> త్వరిత టెంప్లేట్ ఎంపిక (1-Click Templates)</h2>
+        </div>
+        <div class="template-presets">
+          <button class="tpl-chip" onclick="loadTemplate('health')">💧 ఆరోగ్య చిట్కాలు (Health)</button>
+          <button class="tpl-chip" onclick="loadTemplate('schemes')">🌾 ప్రభుత్వ పథకాలు (Gov Schemes)</button>
+          <button class="tpl-chip" onclick="loadTemplate('festival')">🌸 పండుగ విశేషాలు (Festival)</button>
+          <button class="tpl-chip" onclick="loadTemplate('jobs')">🎯 ఉద్యోగ నోటిఫికేషన్ (Jobs)</button>
+          <button class="tpl-chip" onclick="loadTemplate('finance')">📈 ఫైనాన్స్ & SIP (Finance)</button>
+        </div>
+      </div>
+
+      <!-- Story Metadata -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span>⚙️</span> స్టోరీ వివరాలు & SEO సెట్టింగ్స్</h2>
+        </div>
+        <div class="form-group">
+          <label>స్టోరీ ప్రధాన శీర్షిక (Story Title - Telugu)</label>
+          <input type="text" id="storyTitleInput" class="form-control" placeholder="ఉదా: కిడ్నీలో రాళ్ళు రాకుండా ఉండాలంటే 5 ముఖ్యమైన జాగ్రత్తలు!">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>ఫైల్ పేరు / స్లగ్ (Slug / File Name)</label>
+            <input type="text" id="storySlugInput" class="form-control" placeholder="kidney-stones-prevention-telugu.html">
+          </div>
+          <div class="form-group">
+            <label>వర్గం (Category)</label>
+            <select id="storyCategoryInput" class="form-control">
+              <option value="ఆరోగ్యం">ఆరోగ్యం (Health)</option>
+              <option value="పండుగలు">పండుగలు (Festivals)</option>
+              <option value="ప్రభుత్వ పథకాలు">ప్రభుత్వ పథకాలు (Gov Schemes)</option>
+              <option value="ఉద్యోగాలు">ఉద్యోగాలు (Jobs & Education)</option>
+              <option value="ఫైనాన్స్">ఫైనాన్స్ & ఇన్వెస్ట్‌మెంట్ (Finance)</option>
+              <option value="ఆధ్యాత్మికం">ఆధ్యాత్మికం (Spiritual & Pooja)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ముఖ్య కథనం లింక్ (Canonical Article URL on Telugu Public)</label>
+          <input type="url" id="storyCanonicalInput" class="form-control" placeholder="https://www.telugupublic.com/search/label/health%20tips%20telugu">
+        </div>
+      </div>
+
+      <!-- Slides Builder -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span>🎬</span> స్లైడ్స్ ఎడిటర్ (Slides Content)</h2>
+          <button class="btn-action btn-primary" onclick="addNewSlide()">+ Add Slide</button>
+        </div>
+        
+        <div id="slidesContainer">
+          <!-- Dynamic Slide Cards Injected Here -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL: INTERACTIVE SIMULATOR -->
+    <div class="preview-panel">
+      <div class="simulator-wrapper">
+        <div class="phone-notch"></div>
+        <div class="story-live-screen" id="liveStoryScreen">
+          <div class="preview-progress-bar" id="liveProgressBar"></div>
+          <img class="preview-bg-img" id="liveBgImg" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=1000&fit=crop" alt="Background">
+          <div class="preview-overlay"></div>
+          <div class="preview-card-box">
+            <span class="preview-brand-tag" id="liveBrandTag">ఆరోగ్యం</span>
+            <h3 class="preview-title-text" id="liveTitleText">స్టోరీ శీర్షిక ఇక్కడ కనిపిస్తుంది</h3>
+            <p class="preview-desc-text" id="liveDescText">వివరణ ఇక్కడ కనిపిస్తుంది.</p>
+            <ul class="preview-bullet-list" id="liveBulletList"></ul>
+            <a href="#" class="preview-cta-btn" id="liveCtaBtn" style="display:none;">పూర్తి కథనం చదవండి →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulator Navigation -->
+      <div class="simulator-nav-bar">
+        <button class="btn-action btn-outline" onclick="prevSlide()">◀ Previous</button>
+        <span id="slideCounterText" style="font-size: 13px; font-weight: 700; color: #94A3B8;">Slide 1 of 4</span>
+        <button class="btn-action btn-outline" onclick="nextSlide()">Next ▶</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- CODE PREVIEW MODAL -->
+  <div class="modal-overlay" id="codeModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>100% AMP HTML Generated Code</h3>
+        <button class="btn-close-modal" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="ampCodeTextarea" readonly></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-action btn-outline" onclick="copyAmpCode()">📋 Copy Code</button>
+        <button class="btn-action btn-green" onclick="downloadAmpFile()">💾 Download File</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    let storyData = {
+      title: "కిడ్నీలో రాళ్ళు రాకుండా ఉండాలంటే 5 ముఖ్యమైన జాగ్రత్తలు!",
+      slug: "kidney-stones-prevention-telugu.html",
+      category: "ఆరోగ్యం",
+      canonical: "https://www.telugupublic.com/search/label/health%20tips%20telugu",
+      slides: [
+        {
+          type: "cover",
+          badge: "Telugu Public • ఆరోగ్యం",
+          title: "కిడ్నీలో రాళ్ళు రాకుండా ఉండాలంటే 5 ముఖ్యమైన జాగ్రత్తలు!",
+          desc: "తీవ్రమైన కిడ్నీ నొప్పుల నుండి మిమ్మల్ని కాపాడే సులువైన జీవనశైలి మార్పులు 👉",
+          image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1080&h=1920&fit=crop",
+          bullets: []
+        },
+        {
+          type: "content",
+          badge: "చిట్కా #1",
+          title: "రోజుకు 3-4 లీటర్ల నీరు తాగడం",
+          desc: "శరీరంలో నీటి శాతం తగ్గితే మూత్రం చిక్కబడి లవణాలు స్పటికాలుగా మారి రాళ్ళు ఏర్పడతాయి.",
+          image: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=1080&h=1920&fit=crop",
+          bullets: ["ప్రతి గంటకు ఒక గ్లాసు మంచినీరు అలవాటు చేసుకోండి.", "కొబ్బరినీళ్ళు, నిమ్మరసం మూత్ర నాళాలను శుభ్రపరుస్తాయి."]
+        },
+        {
+          type: "content",
+          badge: "చిట్కా #2",
+          title: "ఉప్పు & ప్రాసెస్డ్ ఫుడ్స్ తగ్గించండి",
+          desc: "అధిక సోడియం వల్ల కాల్షియం మూత్రపిండాలలో పేరుకుపోతుంది.",
+          image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1080&h=1920&fit=crop",
+          bullets: ["ప్యాకేజ్డ్ స్నాక్స్, జంక్ ఫుడ్ వాడకం తగ్గించండి.", "పాలకూర, టమోటాలు మితంగా తీసుకోవాలి."]
+        },
+        {
+          type: "cta",
+          badge: "ఆరోగ్య సూత్రాలు",
+          title: "మరిన్ని హెల్త్ టిప్స్ కోసం",
+          desc: "రోజువారీ పోషకాహారం, ఆహార జాగ్రత్తలు మరియు ఆయుర్వేద నివారణల పూర్తి సమాచారం కోసం మా బ్లాగ్‌ను చదవండి.",
+          image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1080&h=1920&fit=crop",
+          bullets: [],
+          ctaText: "మరిన్ని హెల్త్ టిప్స్ చదవండి →",
+          ctaUrl: "https://www.telugupublic.com/search/label/health%20tips%20telugu"
+        }
+      ]
+    };
+
+    let currentSlideIdx = 0;
+
+    function renderSlideCards() {
+      const container = document.getElementById('slidesContainer');
+      container.innerHTML = '';
+
+      storyData.slides.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'slide-item-card';
+        card.innerHTML = `
+          <div class="slide-item-header">
+            <span class="slide-badge-label">స్లైడ్ #${idx + 1} (${s.type.toUpperCase()})</span>
+            ${storyData.slides.length > 2 ? `<button class="btn-del-slide" onclick="deleteSlide(${idx})">🗑️ Delete</button>` : ''}
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>బ్యాడ్జ్ లేబుల్ (Badge)</label>
+              <input type="text" class="form-control" value="${escapeHtml(s.badge)}" oninput="updateSlideField(${idx}, 'badge', this.value)">
+            </div>
+            <div class="form-group">
+              <label>బ్యాక్‌గ్రౌండ్ ఇమేజ్ URL (Unsplash / Direct)</label>
+              <input type="url" class="form-control" value="${escapeHtml(s.image)}" oninput="updateSlideField(${idx}, 'image', this.value)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>స్లైడ్ శీర్షిక (Heading)</label>
+            <input type="text" class="form-control" value="${escapeHtml(s.title)}" oninput="updateSlideField(${idx}, 'title', this.value)">
+          </div>
+          <div class="form-group">
+            <label>వివరణ (Description)</label>
+            <textarea class="form-control" rows="2" oninput="updateSlideField(${idx}, 'desc', this.value)">${escapeHtml(s.desc)}</textarea>
+          </div>
+          ${s.type !== 'cover' ? `
+          <div class="form-group">
+            <label>ముఖ్యాంశాలు / బుల్లెట్ పాయింట్లు (Bullets - Comma Separated)</label>
+            <input type="text" class="form-control" value="${escapeHtml((s.bullets || []).join(', '))}" oninput="updateSlideBullets(${idx}, this.value)" placeholder="పాయింట్ 1, పాయింట్ 2">
+          </div>` : ''}
+          ${s.type === 'cta' ? `
+          <div class="form-row">
+            <div class="form-group">
+              <label>CTA బటన్ టెక్స్ట్</label>
+              <input type="text" class="form-control" value="${escapeHtml(s.ctaText || 'పూర్తి కథనం చదవండి →')}" oninput="updateSlideField(${idx}, 'ctaText', this.value)">
+            </div>
+            <div class="form-group">
+              <label>CTA లింక్ URL</label>
+              <input type="url" class="form-control" value="${escapeHtml(s.ctaUrl || storyData.canonical)}" oninput="updateSlideField(${idx}, 'ctaUrl', this.value)">
+            </div>
+          </div>` : ''}
+        `;
+        container.appendChild(card);
+      });
+
+      renderSimulator();
+    }
+
+    function renderSimulator() {
+      if (currentSlideIdx >= storyData.slides.length) currentSlideIdx = storyData.slides.length - 1;
+      if (currentSlideIdx < 0) currentSlideIdx = 0;
+
+      const s = storyData.slides[currentSlideIdx];
+
+      // Progress bar
+      const bar = document.getElementById('liveProgressBar');
+      bar.innerHTML = storyData.slides.map((_, i) => `<div class="progress-segment ${i === currentSlideIdx ? 'active' : ''}"></div>`).join('');
+
+      document.getElementById('liveBgImg').src = s.image;
+      document.getElementById('liveBrandTag').textContent = s.badge || storyData.category;
+      document.getElementById('liveTitleText').textContent = s.title;
+      document.getElementById('liveDescText').textContent = s.desc;
+
+      const bulletList = document.getElementById('liveBulletList');
+      bulletList.innerHTML = (s.bullets || []).map(b => `<li>${escapeHtml(b)}</li>`).join('');
+
+      const ctaBtn = document.getElementById('liveCtaBtn');
+      if (s.type === 'cta') {
+        ctaBtn.style.display = 'block';
+        ctaBtn.textContent = s.ctaText || 'పూర్తి కథనం చదవండి →';
+      } else {
+        ctaBtn.style.display = 'none';
+      }
+
+      document.getElementById('slideCounterText').textContent = `Slide ${currentSlideIdx + 1} of ${storyData.slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlideIdx < storyData.slides.length - 1) {
+        currentSlideIdx++;
+        renderSimulator();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIdx > 0) {
+        currentSlideIdx--;
+        renderSimulator();
+      }
+    }
+
+    function updateSlideField(idx, field, val) {
+      storyData.slides[idx][field] = val;
+      renderSimulator();
+    }
+
+    function updateSlideBullets(idx, val) {
+      storyData.slides[idx].bullets = val.split(',').map(s => s.trim()).filter(s => s.length > 0);
+      renderSimulator();
+    }
+
+    function addNewSlide() {
+      storyData.slides.splice(storyData.slides.length - 1, 0, {
+        type: "content",
+        badge: `చిట్కా #${storyData.slides.length}`,
+        title: "కొత్త ముఖ్యాంశం శీర్షిక",
+        desc: "వివరణ ఇక్కడ రాయండి.",
+        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1080&h=1920&fit=crop",
+        bullets: ["ముఖ్యాంశం 1", "ముఖ్యాంశం 2"]
+      });
+      renderSlideCards();
+    }
+
+    function deleteSlide(idx) {
+      storyData.slides.splice(idx, 1);
+      renderSlideCards();
+    }
+
+    function escapeHtml(str) {
+      return (str || '').replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+      });
+    }
+
+    function generateAmpHtml() {
+      const poster = storyData.slides[0].image;
+      const slidesHtml = storyData.slides.map((s, idx) => {
+        if (s.type === 'cover') {
+          return `    <!-- SLIDE ${idx + 1}: COVER -->
+    <amp-story-page id="slide-${idx + 1}" auto-advance-after="7s">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="${s.image}" width="1080" height="1920" layout="responsive" alt="${escapeHtml(s.title)}"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="fill">
+        <div class="gradient-overlay"></div>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="tp-card" animate-in="fly-in-bottom" animate-in-duration="0.6s">
+          <div class="tp-brand">${escapeHtml(s.badge)}</div>
+          <h1 class="tp-title">${escapeHtml(s.title)}</h1>
+          <p class="tp-desc">${escapeHtml(s.desc)}</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>`;
+        } else if (s.type === 'cta') {
+          return `    <!-- SLIDE ${idx + 1}: CTA -->
+    <amp-story-page id="slide-${idx + 1}">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="${s.image}" width="1080" height="1920" layout="responsive" alt="${escapeHtml(s.title)}"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="fill">
+        <div class="gradient-overlay"></div>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="tp-card" animate-in="fly-in-bottom" animate-in-duration="0.6s">
+          <div class="tp-brand">${escapeHtml(s.badge)}</div>
+          <h2 class="tp-heading">${escapeHtml(s.title)}</h2>
+          <p class="tp-desc">${escapeHtml(s.desc)}</p>
+        </div>
+      </amp-story-grid-layer>
+      <amp-story-page-outlink layout="nodisplay" theme="custom" cta-accent-element="background" cta-accent-color="#E63946">
+        <a href="${s.ctaUrl || storyData.canonical}" title="${escapeHtml(s.ctaText || 'పూర్తి కథనం చదవండి')}">${escapeHtml(s.ctaText || 'పూర్తి కథనం చదవండి →')}</a>
+      </amp-story-page-outlink>
+    </amp-story-page>`;
+        } else {
+          const bulletsHtml = (s.bullets && s.bullets.length) ? `
+          <ul class="tp-points">
+            ${s.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('\n            ')}
+          </ul>` : '';
+          return `    <!-- SLIDE ${idx + 1} -->
+    <amp-story-page id="slide-${idx + 1}" auto-advance-after="7s">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="${s.image}" width="1080" height="1920" layout="responsive" alt="${escapeHtml(s.title)}"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="fill">
+        <div class="gradient-overlay"></div>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="tp-card" animate-in="fly-in-bottom" animate-in-duration="0.6s">
+          <div class="tp-brand">${escapeHtml(s.badge)}</div>
+          <h2 class="tp-heading">${escapeHtml(s.title)}</h2>
+          <p class="tp-desc">${escapeHtml(s.desc)}</p>${bulletsHtml}
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>`;
+        }
+      }).join('\n\n');
+
+      return `<!doctype html>
+<html amp lang="te">
+<head>
+  <meta charset="utf-8">
+  <title>${escapeHtml(storyData.title)} | Telugu Public</title>
+  <link rel="canonical" href="${escapeHtml(storyData.canonical)}">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="description" content="${escapeHtml(storyData.title)}">
+  
+  <!-- Schema.org for Google Discover -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": "${escapeHtml(storyData.canonical)}",
+    "headline": "${escapeHtml(storyData.title)}",
+    "datePublished": "${new Date().toISOString()}",
+    "dateModified": "${new Date().toISOString()}",
+    "description": "${escapeHtml(storyData.title)}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Telugu Public",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.telugupublic.com/favicon.ico"
+      }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <style amp-custom>
+    * { box-sizing: border-box; font-family: 'Mandali', sans-serif; }
+    amp-story-page { background-color: #0b0f19; }
+    .tp-card {
+      background: rgba(15, 23, 42, 0.84);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin: 16px;
+      color: #ffffff;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .tp-brand {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #E63946, #C1121F);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+    }
+    h1.tp-title { font-size: 25px; line-height: 1.35; font-weight: 700; color: #ffffff; margin: 0 0 12px 0; }
+    h2.tp-heading { font-size: 22px; line-height: 1.35; font-weight: 700; color: #F8FAFC; margin: 0 0 10px 0; }
+    p.tp-desc { font-size: 16px; line-height: 1.6; color: #E2E8F0; margin: 0 0 14px 0; }
+    .tp-points { list-style: none; padding: 0; margin: 0 0 16px 0; }
+    .tp-points li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 15px; line-height: 1.5; color: #CBD5E1; }
+    .tp-points li::before { content: "✦"; position: absolute; left: 0; top: 0; color: #F59E0B; font-size: 14px; }
+    .gradient-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(11,15,25,0.2) 0%, rgba(11,15,25,0.65) 50%, rgba(11,15,25,0.95) 100%);
+    }
+  </style>
+</head>
+<body>
+  <amp-story
+    standalone
+    title="${escapeHtml(storyData.title)} | Telugu Public"
+    publisher="Telugu Public"
+    publisher-logo-src="https://www.telugupublic.com/favicon.ico"
+    poster-portrait-src="${poster}"
+    poster-square-src="${poster}"
+    poster-landscape-src="${poster}">
+
+${slidesHtml}
+
+  </amp-story>
+</body>
+</html>`;
+    }
+
+    function loadTemplate(type) {
+      if (type === 'health') {
+        storyData.title = "జుట్టు రాలడానికి 5 ప్రధాన పోషకాహార లోపాలు!";
+        storyData.slug = "hair-loss-nutrition-telugu.html";
+        storyData.category = "ఆరోగ్యం";
+        storyData.canonical = "https://www.telugupublic.com/search/label/health%20tips%20telugu";
+        storyData.slides = [
+          { type: "cover", badge: "Telugu Public • ఆరోగ్యం", title: "జుట్టు రాలడానికి 5 ప్రధాన పోషకాహార లోపాలు!", desc: "జుట్టు ఆరోగ్యంగా పెరగడానికి అవసరమైన విటమిన్లు & ఆహారాలు 👉", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1080&h=1920&fit=crop", bullets: [] },
+          { type: "content", badge: "పోషకం #1", title: "బయోటిన్ (విటమిన్ B7) లోపం", desc: "బయోటిన్ కెరాటిన్ ఉత్పత్తికి కీలకం. గుడ్లు, బాదం, వేరుశెనగలు తీసుకోవాలి.", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1080&h=1920&fit=crop", bullets: ["జుట్టు కుదుళ్లు బలంగా ఉంటాయి.", "రక్తప్రసరణ మెరుగుపడుతుంది."] },
+          { type: "cta", badge: "హెల్త్ టిప్స్", title: "సంపూర్ణ ఆరోగ్య సమాచారం", desc: "మరిన్ని హెల్త్ టిప్స్ మరియు ఆయుర్వేద నివారణల కోసం మా సైట్ చూడండి.", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1080&h=1920&fit=crop", bullets: [], ctaText: "ఆరోగ్య చిట్కాలు చదవండి →", ctaUrl: "https://www.telugupublic.com/search/label/health%20tips%20telugu" }
+        ];
+      } else if (type === 'schemes') {
+        storyData.title = "AP సంక్షేమ పథకాలు: ఆధార్ e-KYC తాజా గైడ్";
+        storyData.slug = "ap-schemes-ekyc-guide.html";
+        storyData.category = "ప్రభుత్వ పథకాలు";
+        storyData.canonical = "https://www.telugupublic.com/search/label/GovAP";
+        storyData.slides = [
+          { type: "cover", badge: "Telugu Public • ప్రభుత్వ పథకాలు", title: "AP సంక్షేమ పథకాలు: ఆధార్ e-KYC తాజా గైడ్", desc: "పథకాల డబ్బులు జమ కావాలంటే పూర్తి చేయవలసిన ప్రక్రియ 👉", image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&h=1920&fit=crop", bullets: [] },
+          { type: "content", badge: "నియమాలు", title: "బ్యాంక్ ఖాతా & NPCI సీడింగ్", desc: "ఆధార్ నంబర్ నేరుగా బ్యాంక్ ఖాతాతో లింక్ అయి ఉండాలి.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1080&h=1920&fit=crop", bullets: ["సచివాలయంలో e-KYC చేయించాలి.", "రైస్ కార్డు యాక్టివ్‌గా ఉండాలి."] },
+          { type: "cta", badge: "తాజా పథకాలు", title: "సచివాలయ సమాచారం", desc: "అర్హుల జాబితా మరియు స్టేటస్ చెక్ వివరాల కోసం మా వెబ్‌సైట్ చూడండి.", image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=1080&h=1920&fit=crop", bullets: [], ctaText: "పథకాల వివరాలు చదవండి →", ctaUrl: "https://www.telugupublic.com/search/label/GovAP" }
+        ];
+      }
+      
+      document.getElementById('storyTitleInput').value = storyData.title;
+      document.getElementById('storySlugInput').value = storyData.slug;
+      document.getElementById('storyCategoryInput').value = storyData.category;
+      document.getElementById('storyCanonicalInput').value = storyData.canonical;
+
+      renderSlideCards();
+    }
+
+    function openModal() {
+      const code = generateAmpHtml();
+      document.getElementById('ampCodeTextarea').value = code;
+      document.getElementById('codeModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('codeModal').classList.remove('active');
+    }
+
+    function copyAmpCode() {
+      const code = document.getElementById('ampCodeTextarea');
+      code.select();
+      document.execCommand('copy');
+      alert('✅ 100% AMP HTML code copied to clipboard!');
+    }
+
+    function downloadAmpFile() {
+      const code = generateAmpHtml();
+      const filename = document.getElementById('storySlugInput').value.trim() || 'story.html';
+      const blob = new Blob([code], { type: 'text/html;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('storyTitleInput').value = storyData.title;
+      document.getElementById('storySlugInput').value = storyData.slug;
+      document.getElementById('storyCategoryInput').value = storyData.category;
+      document.getElementById('storyCanonicalInput').value = storyData.canonical;
+
+      document.getElementById('storyTitleInput').addEventListener('input', (e) => {
+        storyData.title = e.target.value;
+        storyData.slides[0].title = e.target.value;
+        renderSimulator();
+      });
+
+      document.getElementById('storyCategoryInput').addEventListener('change', (e) => {
+        storyData.category = e.target.value;
+        renderSimulator();
+      });
+
+      document.getElementById('storyCanonicalInput').addEventListener('input', (e) => {
+        storyData.canonical = e.target.value;
+      });
+
+      document.getElementById('btnViewCode').addEventListener('click', openModal);
+      document.getElementById('btnDownloadHtml').addEventListener('click', downloadAmpFile);
+
+      renderSlideCards();
+    });
+  </script>
+
+</body>
+</html>

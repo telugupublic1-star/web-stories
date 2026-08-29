@@ -3,7 +3,7 @@ const path = require('path');
 
 const storiesDir = __dirname;
 const files = fs.readdirSync(storiesDir)
-  .filter(f => f.endsWith('.html') && f !== 'index.html')
+  .filter(f => f.endsWith('.html') && f !== 'index.html' && f !== 'create.html')
   .sort((a, b) => {
     const statA = fs.statSync(path.join(storiesDir, a));
     const statB = fs.statSync(path.join(storiesDir, b));
