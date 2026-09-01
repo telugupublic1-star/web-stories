@@ -1,29 +1,5 @@
 [
   {
-    "title": "పీఎం కిసాన్ 19వ విడత: స్టేటస్ చెక్ & e-KYC పూర్తి వివరాలు",
-    "category": "ప్రభుత్వ పథకాలు",
-    "badgeClass": "badge-schemes",
-    "url": "https://stories.telugupublic.com/pm-kisan-19th-installment-telugu.html",
-    "image": "https://stories.telugupublic.com/images/pm_kisan_farmer.jpg",
-    "date": "2026-08-29"
-  },
-  {
-    "title": "రాఖీ పండుగ 2026: శుభ ముహూర్తం, రాశి ప్రకారం రంగులు & పూజా విధానం",
-    "category": "పండుగలు",
-    "badgeClass": "badge-festival",
-    "url": "https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html",
-    "image": "https://stories.telugupublic.com/images/raksha_bandhan.jpg",
-    "date": "2026-08-29"
-  },
-  {
-    "title": "శ్రావణ శుక్రవారం వరలక్ష్మీ వ్రతం: పూజా విధానం & నిబంధనలు",
-    "category": "పండుగలు",
-    "badgeClass": "badge-festival",
-    "url": "https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html",
-    "image": "https://stories.telugupublic.com/images/varalakshmi_vratham.jpg",
-    "date": "2026-08-29"
-  },
-  {
     "title": "శ్రీ లక్ష్మీ నరసింహ స్వామి అష్టోత్తర శతనామావళి",
     "category": "ఆధ్యాత్మికం",
     "badgeClass": "badge-devotional",
@@ -45,6 +21,30 @@
     "badgeClass": "badge-finance",
     "url": "https://stories.telugupublic.com/mutual-funds-sip-beginners-telugu.html",
     "image": "https://stories.telugupublic.com/images/mutual_funds_sip.jpg",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "పీఎం కిసాన్ 19వ విడత: స్టేటస్ చెక్ & e-KYC పూర్తి వివరాలు",
+    "category": "ప్రభుత్వ పథకాలు",
+    "badgeClass": "badge-schemes",
+    "url": "https://stories.telugupublic.com/pm-kisan-19th-installment-telugu.html",
+    "image": "https://stories.telugupublic.com/images/pm_kisan_farmer.jpg",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "రాఖీ పండుగ 2026: శుభ ముహూర్తం, రాశి ప్రకారం రంగులు & పూజా విధానం",
+    "category": "పండుగలు",
+    "badgeClass": "badge-festival",
+    "url": "https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html",
+    "image": "https://stories.telugupublic.com/images/raksha_bandhan.jpg",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "శ్రావణ శుక్రవారం వరలక్ష్మీ వ్రతం: పూజా విధానం & నిబంధనలు",
+    "category": "పండుగలు",
+    "badgeClass": "badge-festival",
+    "url": "https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html",
+    "image": "https://stories.telugupublic.com/images/varalakshmi_vratham.jpg",
     "date": "2026-08-29"
   },
   {
