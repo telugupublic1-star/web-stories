@@ -104,6 +104,9 @@ ${urls}
 
 fs.writeFileSync(path.join(storiesDir, 'sitemap.xml'), sitemap, 'utf8');
 
+// Sort stories newest first by date
+storiesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 // 2. Generate stories.json (Dynamic Feed for Main Website)
 fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(storiesData, null, 2), 'utf8');
 

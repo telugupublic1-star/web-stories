@@ -499,7 +499,7 @@
             progressBar.style.width = '100%';
             setTimeout(() => { progressBar.style.width = '0%'; }, 300);
           }
-          allStories = data || [];
+          allStories = (data || []).sort((a, b) => new Date(b.date || '2026-08-01') - new Date(a.date || '2026-08-01'));
           applyFilter();
         })
         .catch(err => {
@@ -508,7 +508,7 @@
             .then(r => r.json())
             .then(data => {
               if (progressBar) progressBar.style.width = '100%';
-              allStories = data || [];
+              allStories = (data || []).sort((a, b) => new Date(b.date || '2026-08-01') - new Date(a.date || '2026-08-01'));
               applyFilter();
               setTimeout(() => { if (progressBar) progressBar.style.width = '0%'; }, 300);
             })
