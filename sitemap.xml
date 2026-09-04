@@ -8,33 +8,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://stories.telugupublic.com/images/lakshmi_narasimha.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://stories.telugupublic.com/images/varalakshmi_vratham.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://stories.telugupublic.com/images/raksha_bandhan.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://stories.telugupublic.com/mutual-funds-sip-beginners-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
@@ -53,6 +26,33 @@
     </image:image>
   </url>
   <url>
+    <loc>https://stories.telugupublic.com/raksha-bandhan-2026-telugu.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stories.telugupublic.com/images/raksha_bandhan.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stories.telugupublic.com/images/varalakshmi_vratham.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stories.telugupublic.com/images/lakshmi_narasimha.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://stories.telugupublic.com/kidney-stones-prevention-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
@@ -62,12 +62,12 @@
     </image:image>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
+    <loc>https://stories.telugupublic.com/ap-govt-schemes-guide.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://stories.telugupublic.com/images/hair_loss_nutrition.webp</image:loc>
+      <image:loc>https://stories.telugupublic.com/images/ap_govt_schemes.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -80,12 +80,12 @@
     </image:image>
   </url>
   <url>
-    <loc>https://stories.telugupublic.com/ap-govt-schemes-guide.html</loc>
+    <loc>https://stories.telugupublic.com/hair-loss-nutrition-telugu.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://stories.telugupublic.com/images/ap_govt_schemes.webp</image:loc>
+      <image:loc>https://stories.telugupublic.com/images/hair_loss_nutrition.webp</image:loc>
     </image:image>
   </url>
 </urlset>
