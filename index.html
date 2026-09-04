@@ -1,602 +1,358 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="te" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్</title>
-  <meta name="description" content="Telugu Public Web Stories - తాజా ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు ఆకర్షణీయమైన విజువల్ ఫార్మాట్‌లో.">
-  <link rel="canonical" href="https://stories.telugupublic.com/">
+  <meta name="title" content="Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్" />
+  <meta name="description" content="Telugu Public Web Stories - తాజా ఆరోగ్య చిట్కాలు, పండుగ విశేషాలు, ప్రభుత్వ పథకాలు, ఉద్యోగ సమాచారం, ఆధ్యాత్మిక కథనాలు ఆకర్షణీయమైన విజువల్ ఫార్మాట్‌లో." />
+  <link rel="canonical" href="https://stories.telugupublic.com/" />
   
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stories.telugupublic.com/" />
+  <meta property="og:title" content="Telugu Public Web Stories | తాజా విజువల్ వెబ్ స్టోరీస్" />
+  <meta property="og:description" content="ఆరోగ్యం, పండుగలు, ప్రభుత్వ పథకాలు, ఉద్యోగాలు & ఆధ్యాత్మిక సమాచారం – ఒక్క క్లిక్‌తో ఫుల్-స్క్రీన్‌లో చూడండి." />
+  <meta property="og:image" content="https://stories.telugupublic.com/TeluguPublic.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://stories.telugupublic.com/" />
+  <meta property="twitter:title" content="Telugu Public Web Stories" />
+  <meta property="twitter:description" content="తాజా విజువల్ వెబ్ స్టోరీస్ తెలుగులో." />
+  <meta property="twitter:image" content="https://stories.telugupublic.com/TeluguPublic.png" />
+
   <!-- Favicon / Logo -->
-  <link rel="icon" href="./TeluguPublic.png" type="image/png">
-  
-  <!-- Google Fonts: Mandali (Telugu) & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Telugu Public Official Green & Navy Light Palette */
-    :root {
-      --tp-green: #16A34A;
-      --tp-green-dark: #15803D;
-      --tp-green-light: #DCFCE7;
-      --tp-green-glow: rgba(22, 163, 74, 0.35);
-      --tp-navy: #1E293B;
-      --tp-blue: #2563EB;
-      --tp-bg: #F8FAFC;
-      --tp-card-bg: #FFFFFF;
-      --tp-border: #E2E8F0;
-      --tp-text-title: #0F172A;
-      --tp-text-body: #334155;
-      --tp-text-muted: #64748B;
-      --tp-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --tp-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Mandali', 'Plus Jakarta Sans', sans-serif;
-    }
-    
-    body {
-      background-color: var(--tp-bg);
-      background-image: 
-        radial-gradient(circle at 10% 10%, rgba(22, 163, 74, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 15%, rgba(37, 99, 235, 0.04) 0%, transparent 40%);
-      background-attachment: fixed;
-      color: var(--tp-text-body);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* ---------------- HEADER (CLEAN LIGHT & GREEN) ---------------- */
-    header {
-      background: #FFFFFF;
-      border-top: 3px solid var(--tp-green);
-      border-bottom: 1px solid var(--tp-border);
-      padding: 12px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: var(--tp-shadow);
-    }
-    
-    .header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--tp-text-title);
-    }
-    
-    .brand-logo-img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-    
-    .brand-logo-text {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      color: var(--tp-navy);
-    }
-    
-    .brand-logo-text span {
-      color: var(--tp-green);
-    }
-    
-    .logo-badge {
-      background: var(--tp-green-light);
-      color: var(--tp-green-dark);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border: 1px solid rgba(22, 163, 74, 0.25);
-    }
-    
-    .main-site-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--tp-green);
-      color: #FFFFFF;
-      padding: 9px 20px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 4px 12px var(--tp-green-glow);
-      transition: all 0.25s ease;
-    }
-    
-    .main-site-btn:hover {
-      background: var(--tp-green-dark);
-      box-shadow: 0 6px 18px var(--tp-green-glow);
-      transform: translateY(-2px);
-    }
-    
-    /* ---------------- HERO SECTION ---------------- */
-    .hero-section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 36px 20px 20px;
-      width: 100%;
-      text-align: center;
-    }
-    
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #FFFFFF;
-      border: 1px solid var(--tp-border);
-      color: var(--tp-green-dark);
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      box-shadow: var(--tp-shadow);
-    }
-    
-    .hero-title {
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      color: var(--tp-text-title);
-    }
-    
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--tp-text-muted);
-      max-width: 650px;
-      margin: 0 auto 26px;
-      line-height: 1.6;
-    }
-    
-    /* ---------------- SEARCH & CATEGORY CONTROLS ---------------- */
-    .controls-wrapper {
-      max-width: 820px;
-      margin: 0 auto 32px;
-    }
-    
-    .search-box-wrap {
-      position: relative;
-      margin-bottom: 18px;
-    }
-    
-    .search-box-wrap input {
-      width: 100%;
-      background: #FFFFFF;
-      border: 1px solid var(--tp-border);
-      border-radius: 30px;
-      padding: 14px 24px 14px 48px;
-      color: var(--tp-text-title);
-      font-size: 15px;
-      outline: none;
-      transition: all 0.25s ease;
-      box-shadow: var(--tp-shadow);
-    }
-    
-    .search-box-wrap input:focus {
-      border-color: var(--tp-green);
-      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
-    }
-    
-    .search-box-wrap svg {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      fill: var(--tp-text-muted);
-      pointer-events: none;
-    }
-    
-    .category-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    
-    .cat-btn {
-      background: #FFFFFF;
-      border: 1px solid var(--tp-border);
-      color: var(--tp-text-muted);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-    
-    .cat-btn:hover {
-      background: #F1F5F9;
-      color: var(--tp-text-title);
-      border-color: #CBD5E1;
-      transform: translateY(-2px);
-    }
-    
-    .cat-btn.active {
-      background: var(--tp-green);
-      border-color: var(--tp-green);
-      color: #FFFFFF;
-      box-shadow: 0 4px 12px var(--tp-green-glow);
-    }
-    
-    .stories-count-bar {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--tp-text-muted);
-      font-weight: 600;
-    }
-    
-    /* ---------------- STORIES GRID ---------------- */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
-      width: 100%;
-    }
-    
-    .stories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 22px;
-    }
-    
-    @media (max-width: 640px) {
-      .stories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-      .hero-title { font-size: 26px; }
-      .hero-subtitle { font-size: 14px; }
-    }
-    
-    /* ---------------- STORY CARD ---------------- */
-    .story-card {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      aspect-ratio: 9 / 15.5;
-      background: #0F172A;
-      border: 1px solid var(--tp-border);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 18px 16px;
-      box-shadow: var(--tp-shadow);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    
-    @media (max-width: 640px) {
-      .story-card {
-        padding: 14px 10px;
-        border-radius: 14px;
+  <link rel="icon" href="./TeluguPublic.png" type="image/png" />
+  <meta name="theme-color" content="#1a6a58" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Telugu Public Web Stories",
+    "url": "https://stories.telugupublic.com/",
+    "description": "తాజా తెలుగు వెబ్ స్టోరీస్ - ఆరోగ్యం, భక్తి, పండుగలు మరియు ప్రభుత్వ పథకాలు.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Telugu Public",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stories.telugupublic.com/TeluguPublic.png"
       }
     }
-    
-    .story-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      border-color: var(--tp-green);
-      box-shadow: var(--tp-shadow-hover);
-    }
-    
-    .story-card img.poster-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      z-index: 1;
-    }
-    
-    .story-card:hover img.poster-img {
-      transform: scale(1.07);
-    }
-    
-    .story-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(15, 23, 42, 0.95) 100%);
-      z-index: 2;
-    }
-    
-    .story-top-bar {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      right: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 3;
-    }
-    
-    .story-cat-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
-    }
-    
-    .badge-health { background: linear-gradient(135deg, #10B981, #059669); }
-    .badge-festival { background: linear-gradient(135deg, #F59E0B, #D97706); }
-    .badge-devotional { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
-    .badge-schemes { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
-    .badge-jobs { background: linear-gradient(135deg, #9333EA, #7E22CE); }
-    .badge-finance { background: linear-gradient(135deg, #0284C7, #0369A1); }
-    
-    .story-play-indicator {
-      width: 28px;
-      height: 28px;
-      background: rgba(255, 255, 255, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 12px;
-      backdrop-filter: blur(6px);
-      transition: all 0.3s ease;
-    }
-    
-    .story-card:hover .story-play-indicator {
-      background: var(--tp-green);
-      border-color: var(--tp-green);
-      transform: scale(1.15);
-      box-shadow: 0 0 12px var(--tp-green-glow);
-    }
-    
-    .story-body {
-      position: relative;
-      z-index: 3;
-    }
-    
-    .story-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #FFFFFF;
-      line-height: 1.4;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    
-    @media (max-width: 640px) {
-      .story-title { font-size: 14px; line-height: 1.35; -webkit-line-clamp: 2; }
-    }
-    
-    .story-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #CBD5E1;
-    }
-    
-    .story-read-action {
-      color: #86EFAC;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: transform 0.2s ease;
-    }
-    
-    .story-card:hover .story-read-action {
-      transform: translateX(4px);
-      color: #FFFFFF;
-    }
-    
-    /* Loading Skeleton (Light Mode) */
-    .story-skeleton {
-      background: linear-gradient(90deg, #E2E8F0 25%, #F1F5F9 50%, #E2E8F0 75%);
-      background-size: 200% 100%;
-      animation: skeletonPulse 1.5s infinite;
-      border-radius: 18px;
-      aspect-ratio: 9 / 15.5;
-    }
-    @keyframes skeletonPulse {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    
-    /* Empty State */
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--tp-text-muted);
-    }
-    .empty-state h3 {
-      font-size: 20px;
-      color: var(--tp-text-title);
-      margin-bottom: 8px;
-    }
-    
-    /* ---------------- FOOTER (LIGHT) ---------------- */
-    footer {
-      margin-top: auto;
-      background: #FFFFFF;
-      border-top: 1px solid var(--tp-border);
-      padding: 32px 20px;
-      text-align: center;
-    }
-    
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--tp-text-title);
-      font-weight: 800;
-      font-size: 18px;
-    }
-    
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      font-size: 14px;
-    }
-    
-    .footer-links a {
-      color: var(--tp-text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    
-    .footer-links a:hover {
-      color: var(--tp-green);
-    }
-    
-    .copyright-text {
-      font-size: 13px;
-      color: #94A3B8;
-    }
-  </style>
+  }
+  </script>
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Inline SVG Icon Defs (reusable via <use>) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <!-- Search -->
+      <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </symbol>
+      <!-- Moon -->
+      <symbol id="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+      <!-- Sun -->
+      <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </symbol>
+      <!-- Arrow Up -->
+      <symbol id="ic-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+      </symbol>
+      <!-- Close X -->
+      <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </symbol>
+      <!-- Play -->
+      <symbol id="ic-play" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </symbol>
+      <!-- External Link -->
+      <symbol id="ic-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+      </symbol>
+    </defs>
+  </svg>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <a href="https://stories.telugupublic.com/" class="brand-logo">
-        <img src="./TeluguPublic.png" alt="Telugu Public Logo" class="brand-logo-img">
-        <div class="brand-logo-text">Telugu<span>Public</span></div>
-        <span class="logo-badge">Web Stories</span>
-      </a>
-      <div class="header-actions">
-        <a href="https://www.telugupublic.com/" class="main-site-btn">
-          <span>ముఖ్య వెబ్‌సైట్</span>
-          <span>→</span>
+  <!-- Global Progress Bar -->
+  <div class="tp-progress-bar" id="tp-global-progress">
+    <div class="tp-progress-fill" id="tp-progress-fill"></div>
+  </div>
+
+  <!-- ======================================================================
+       TOP NAVIGATION BAR (Editorial WisprFlow Style)
+       ====================================================================== -->
+  <header class="tp-navbar">
+    <div class="tp-container">
+      <div class="tp-nav-inner">
+
+        <!-- Brand Logo -->
+        <a href="https://stories.telugupublic.com/" class="tp-brand-wrap" title="Telugu Public Web Stories">
+          <img src="./TeluguPublic.png" alt="Telugu Public Logo" class="tp-brand-logo" />
+          <div class="tp-brand-name">
+            Telugu<span>Public</span>
+            <span class="tp-brand-badge">STORIES</span>
+          </div>
         </a>
+
+        <!-- Desktop Quick Search Trigger -->
+        <div class="tp-nav-search">
+          <button class="tp-nav-search-btn" id="tp-nav-search-trigger" title="కథనాలను శోధించండి">
+            <span style="display:flex;align-items:center;gap:8px;">
+              <svg width="14" height="14" style="color:var(--text-muted);"><use href="#ic-search"/></svg>
+              <span>కథనాలను శోధించండి...</span>
+            </span>
+            <kbd class="tp-kbd-hint">Ctrl + K</kbd>
+          </button>
+        </div>
+
+        <!-- Right Nav Actions -->
+        <div class="tp-nav-actions">
+          <a href="#" class="tp-nav-link" data-cat-link="ఆరోగ్యం">ఆరోగ్యం</a>
+          <a href="#" class="tp-nav-link" data-cat-link="పండుగలు">పండుగలు</a>
+          <a href="#" class="tp-nav-link" data-cat-link="ప్రభుత్వ పథకాలు">పథకాలు</a>
+          <a href="#" class="tp-nav-link" data-cat-link="ఆధ్యాత్మికం">ఆధ్యాత్మికం</a>
+
+          <!-- Link to Main Site -->
+          <a href="https://www.telugupublic.com/" target="_blank" rel="noopener" class="tp-nav-btn-portal" title="ముఖ్య వెబ్‌సైట్">
+            <span>ముఖ్య వెబ్‌సైట్</span>
+            <svg width="12" height="12"><use href="#ic-external"/></svg>
+          </a>
+
+          <!-- Mobile search icon -->
+          <button class="tp-mobile-search-btn" id="tp-mobile-search-trigger" title="Search Stories">
+            <svg width="18" height="18"><use href="#ic-search"/></svg>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button class="tp-theme-toggle" id="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <svg width="17" height="17" id="theme-icon"><use href="#ic-moon"/></svg>
+          </button>
+        </div>
+
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="hero-pill">
-      <span>🎬</span>
-      <span>Google Discover Visual Stories</span>
+  <!-- ======================================================================
+       COMMAND PALETTE / MODAL SEARCH (Ctrl + K)
+       ====================================================================== -->
+  <div class="tp-palette-backdrop" id="tpPaletteBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="tp-palette-modal">
+      <div class="tp-palette-search">
+        <svg width="18" height="18" style="color:var(--text-muted);flex-shrink:0;"><use href="#ic-search"/></svg>
+        <input type="text" id="tpPaletteInput" class="tp-palette-input" placeholder="స్టోరీ పేరు లేదా కీవర్డ్ టైప్ చేయండి..." autocomplete="off" />
+        <button id="tpPaletteClose" style="color:var(--text-muted);padding:4px;" title="Close">
+          <svg width="18" height="18"><use href="#ic-x"/></svg>
+        </button>
+      </div>
+      <div class="tp-palette-results" id="tpPaletteResults">
+        <!-- Live search results rendered here -->
+      </div>
+      <div class="tp-palette-footer">
+        <span>ఎంచుకోవడానికి <kbd class="tp-kbd-hint">↑</kbd> <kbd class="tp-kbd-hint">↓</kbd> ఉపయోగించండి</span>
+        <span>మూసివేయడానికి <kbd class="tp-kbd-hint">ESC</kbd></span>
+      </div>
     </div>
-    <h1 class="hero-title">తాజా విజువల్ వెబ్ స్టోరీస్ హబ్</h1>
-    <p class="hero-subtitle">ఆరోగ్యం, పండుగలు, ప్రభుత్వ పథకాలు, ఉద్యోగాలు & ఆధ్యాత్మిక సమాచారం – ఒక్క క్లిక్‌తో ఫుల్-స్క్రీన్‌లో చూడండి.</p>
-    
-    <!-- SEARCH & CATEGORY FILTERS -->
-    <div class="controls-wrapper">
-      <div class="search-box-wrap">
-        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="text" id="storySearchInput" placeholder="స్టోరీ టైటిల్ లేదా కీవర్డ్ శోధించండి... (Search stories)">
+  </div>
+
+  <!-- ======================================================================
+       HERO SECTION
+       ====================================================================== -->
+  <section class="tp-hero">
+    <div class="tp-container">
+      <div class="tp-hero-pill">
+        <span class="tp-hero-pill-icon">✦</span>
+        <span>గూగుల్ డిస్కవర్ విజువల్ వెబ్ స్టోరీస్</span>
       </div>
       
-      <div class="category-pills">
-        <button class="cat-btn active" data-cat="all">అన్నీ (All)</button>
-        <button class="cat-btn" data-cat="పండుగలు">🌸 పండుగలు</button>
-        <button class="cat-btn" data-cat="ఆరోగ్యం">💧 ఆరోగ్యం</button>
-        <button class="cat-btn" data-cat="ప్రభుత్వ పథకాలు">🌾 పథకాలు</button>
-        <button class="cat-btn" data-cat="ఉద్యోగాలు">🎯 ఉద్యోగాలు</button>
-        <button class="cat-btn" data-cat="ఫైనాన్స్">📈 ఫైనాన్స్</button>
-        <button class="cat-btn" data-cat="ఆధ్యాత్మికం">🪔 ఆధ్యాత్మికం</button>
-      </div>
+      <h1 class="tp-hero-title">
+        Visual <em>Stories</em> Hub
+      </h1>
       
-      <div class="stories-count-bar" id="storiesCountBar">లోడ్ అవుతున్నాయి...</div>
+      <p class="tp-hero-subtitle">
+        ఆరోగ్యం, పండుగలు, ప్రభుత్వ పథకాలు, ఉద్యోగాలు & ఆధ్యాత్మిక విశేషాలు – సులభంగా, స్పష్టంగా ఫుల్-స్క్రీన్‌లో చూడండి.
+      </p>
+
+      <!-- SEARCH & CATEGORY CONTROLS -->
+      <div class="tp-controls">
+        <div class="tp-search-wrap">
+          <svg class="tp-search-icon"><use href="#ic-search"/></svg>
+          <input type="text" id="storySearchInput" class="tp-search-input" placeholder="స్టోరీ టైటిల్ లేదా అంశాన్ని శోధించండి... (Search stories)" autocomplete="off" />
+          <button class="tp-search-clear" id="storySearchClear" title="Clear search">
+            <svg width="16" height="16"><use href="#ic-x"/></svg>
+          </button>
+        </div>
+
+        <div class="tp-category-pills" id="categoryPills">
+          <button class="tp-cat-btn active" data-cat="all">అన్నీ (All)</button>
+          <button class="tp-cat-btn" data-cat="ఆరోగ్యం">💧 ఆరోగ్యం</button>
+          <button class="tp-cat-btn" data-cat="పండుగలు">🌸 పండుగలు</button>
+          <button class="tp-cat-btn" data-cat="ప్రభుత్వ పథకాలు">🌾 పథకాలు</button>
+          <button class="tp-cat-btn" data-cat="ఉద్యోగాలు">🎯 ఉద్యోగాలు</button>
+          <button class="tp-cat-btn" data-cat="ఫైనాన్స్">📈 ఫైనాన్స్</button>
+          <button class="tp-cat-btn" data-cat="ఆధ్యాత్మికం">🪔 ఆధ్యాత్మికం</button>
+        </div>
+
+        <div class="tp-count-bar" id="storiesCountBar">కథనాలు లోడ్ అవుతున్నాయి...</div>
+      </div>
     </div>
   </section>
 
-  <!-- STORIES CONTAINER -->
-  <main class="container">
-    <div class="stories-grid" id="storiesGrid">
-      <!-- Skeletons while fetching stories.json -->
-      <div class="story-skeleton"></div>
-      <div class="story-skeleton"></div>
-      <div class="story-skeleton"></div>
-      <div class="story-skeleton"></div>
+  <!-- ======================================================================
+       STORIES GRID SECTION
+       ====================================================================== -->
+  <main class="tp-main-section">
+    <div class="tp-container">
+      <div class="tp-stories-grid" id="storiesGrid">
+        <!-- Skeletons while fetching stories.json -->
+        <div class="tp-skeleton-card"></div>
+        <div class="tp-skeleton-card"></div>
+        <div class="tp-skeleton-card"></div>
+        <div class="tp-skeleton-card"></div>
+      </div>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <a href="https://stories.telugupublic.com/" class="footer-brand">
-        <img src="./TeluguPublic.png" alt="Telugu Public Logo" style="width: 32px; height: 32px; object-fit: contain;">
-        <span>Telugu Public Web Stories</span>
-      </a>
-      <div class="footer-links">
-        <a href="https://www.telugupublic.com/">ముఖ్య వెబ్‌సైట్ (Home)</a>
-        <a href="https://stories.telugupublic.com/sitemap.xml">సైట్‌మ్యాప్ (Sitemap)</a>
-        <a href="https://www.telugupublic.com/p/privacy-policy.html">గోప్యతా విధానం (Privacy)</a>
-        <a href="https://www.telugupublic.com/p/contact-us.html">సంప్రదించండి (Contact)</a>
+  <!-- ======================================================================
+       EDITORIAL FOOTER
+       ====================================================================== -->
+  <footer class="tp-footer">
+    <div class="tp-container">
+      <div class="tp-footer-grid">
+
+        <!-- Column 1: Brand Info -->
+        <div>
+          <a href="https://stories.telugupublic.com/" class="tp-footer-brand-wrap">
+            <img src="./TeluguPublic.png" alt="Telugu Public Logo" style="width:34px;height:34px;object-fit:contain;border-radius:var(--r-sm);" />
+            <div class="tp-brand-name">
+              Telugu<span>Public</span>
+              <span class="tp-brand-badge">STORIES</span>
+            </div>
+          </a>
+          <p class="tp-footer-desc">
+            తెలుగు ప్రజల కోసం ఆధునిక సమాచార వేదిక. ఆరోగ్యం, ప్రభుత్వ పథకాలు, కెరీర్, భక్తి మరియు జీవనశైలి సమాచారం విజువల్ కథనాల రూపంలో.
+          </p>
+        </div>
+
+        <!-- Column 2: Categories -->
+        <div>
+          <div class="tp-footer-col-title">వర్గాలు (Categories)</div>
+          <ul class="tp-footer-links">
+            <li><a href="#" data-cat-link="ఆరోగ్యం">ఆరోగ్యం (Health)</a></li>
+            <li><a href="#" data-cat-link="పండుగలు">పండుగలు (Festivals)</a></li>
+            <li><a href="#" data-cat-link="ప్రభుత్వ పథకాలు">ప్రభుత్వ పథకాలు (Govt Schemes)</a></li>
+            <li><a href="#" data-cat-link="ఆధ్యాత్మికం">ఆధ్యాత్మికం (Spiritual)</a></li>
+            <li><a href="#" data-cat-link="ఫైనాన్స్">ఫైనాన్స్ & పొదుపు (Finance)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Portals & Tools -->
+        <div>
+          <div class="tp-footer-col-title">సేవలు (Portals)</div>
+          <ul class="tp-footer-links">
+            <li><a href="https://www.telugupublic.com/" target="_blank" rel="noopener">ముఖ్య వార్తా వెబ్‌సైట్</a></li>
+            <li><a href="https://onlinetools.telugupublic.com/" target="_blank" rel="noopener">ఆన్‌లైన్ టూల్స్ హబ్ (Tools)</a></li>
+            <li><a href="https://stories.telugupublic.com/sitemap.xml">సైట్‌మ్యాప్ (Sitemap)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal & Info -->
+        <div>
+          <div class="tp-footer-col-title">సమాచారం (Info)</div>
+          <ul class="tp-footer-links">
+            <li><a href="https://www.telugupublic.com/p/privacy-policy.html" target="_blank" rel="noopener">గోప్యతా విధానం (Privacy)</a></li>
+            <li><a href="https://www.telugupublic.com/p/contact-us.html" target="_blank" rel="noopener">సంప్రదించండి (Contact)</a></li>
+            <li><a href="https://www.telugupublic.com/p/about-us.html" target="_blank" rel="noopener">మా గురించి (About Us)</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div class="copyright-text">
-        © 2026 <strong>Telugu Public</strong>. All Rights Reserved. Powered by Google Discover AMP Web Stories.
+
+      <!-- Footer Bottom Bar -->
+      <div class="tp-footer-bottom">
+        <div>
+          © 2026 <strong>Telugu Public</strong>. All Rights Reserved. Powered by Google Discover AMP Web Stories.
+        </div>
+        <button class="tp-back-to-top" id="backToTopBtn" title="పైకి వెళ్ళండి">
+          <span>పైకి వెళ్ళండి</span>
+          <svg width="14" height="14"><use href="#ic-arrow-up"/></svg>
+        </button>
       </div>
     </div>
   </footer>
 
-  <!-- 100% DYNAMIC STORIES JSON ENGINE -->
+  <!-- ======================================================================
+       APPLICATION SCRIPT (Design System, Theme Toggle, Dynamic JSON Engine)
+       ====================================================================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    (function() {
+      'use strict';
+
+      // 1. THEME MANAGER (Synced with Online Tools localStorage system)
+      const THEME_KEY = 'tp_theme';
+      const rootHtml = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+
+      function applyTheme(theme) {
+        rootHtml.setAttribute('data-theme', theme);
+        if (themeIcon) {
+          themeIcon.querySelector('use').setAttribute('href', theme === 'dark' ? '#ic-sun' : '#ic-moon');
+        }
+        localStorage.setItem(THEME_KEY, theme);
+      }
+
+      // Read initial theme preference (saved or system)
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        applyTheme(savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark');
+      } else {
+        applyTheme('light');
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const current = rootHtml.getAttribute('data-theme') || 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        });
+      }
+
+      // 2. DOM ELEMENTS
       const storiesGrid = document.getElementById('storiesGrid');
       const searchInput = document.getElementById('storySearchInput');
-      const catBtns = document.querySelectorAll('.cat-btn');
+      const searchClear = document.getElementById('storySearchClear');
+      const catBtns = document.querySelectorAll('.tp-cat-btn');
       const countBar = document.getElementById('storiesCountBar');
+      const progressBar = document.getElementById('tp-progress-fill');
+      const backToTopBtn = document.getElementById('backToTopBtn');
+
+      // Command Palette Elements
+      const paletteBackdrop = document.getElementById('tpPaletteBackdrop');
+      const paletteInput = document.getElementById('tpPaletteInput');
+      const paletteResults = document.getElementById('tpPaletteResults');
+      const paletteClose = document.getElementById('tpPaletteClose');
+      const navSearchTrigger = document.getElementById('tp-nav-search-trigger');
+      const mobileSearchTrigger = document.getElementById('tp-mobile-search-trigger');
 
       let allStories = [];
       let currentCat = 'all';
@@ -608,58 +364,97 @@
         });
       }
 
+      function getBadgeClass(cat) {
+        if (!cat) return 'badge-health';
+        if (cat.includes('ఆరోగ్యం')) return 'badge-health';
+        if (cat.includes('పండుగలు')) return 'badge-festival';
+        if (cat.includes('ఆధ్యాత్మికం')) return 'badge-devotional';
+        if (cat.includes('పథకాలు') || cat.includes('ప్రభుత్వ')) return 'badge-schemes';
+        if (cat.includes('ఉద్యోగాలు')) return 'badge-jobs';
+        if (cat.includes('ఫైనాన్స్')) return 'badge-finance';
+        return 'badge-health';
+      }
+
+      // 3. RENDER STORIES
       function renderStories(stories) {
         if (!stories || stories.length === 0) {
           storiesGrid.innerHTML = `
-            <div class="empty-state">
-              <h3>🔍 ఎటువంటి కథనాలు కనుగొనబడలేదు</h3>
-              <p>వేరొక కీవర్డ్ లేదా వర్గాన్ని ఎంచుకోండి.</p>
+            <div class="tp-empty-state">
+              <div class="tp-empty-icon">🔍</div>
+              <h3 class="tp-empty-title">ఎటువంటి కథనాలు కనుగొనబడలేదు</h3>
+              <p class="tp-empty-desc">మీరు వెతుకుతున్న పదానికి కథనాలు లభించలేదు. వేరొక కీవర్డ్ లేదా వర్గాన్ని ఎంచుకోండి.</p>
+              <button class="tp-btn-reset" id="emptyResetBtn">అన్ని కథనాలు చూడండి</button>
             </div>`;
           countBar.textContent = 'కథనాలు ఏవీ లేవు';
+          
+          const resetBtn = document.getElementById('emptyResetBtn');
+          if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+              searchInput.value = '';
+              searchQuery = '';
+              searchClear.style.display = 'none';
+              currentCat = 'all';
+              catBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-cat') === 'all'));
+              applyFilter();
+            });
+          }
           return;
         }
 
         countBar.textContent = `మొత్తం: ${stories.length} కథనాలు ప్రదర్శించబడుతున్నాయి`;
 
-        const html = stories.map(s => `
-          <a href="${escapeHtml(s.url)}" class="story-card" data-cat="${escapeHtml(s.category)}">
-            <img class="poster-img" src="${escapeHtml(s.image)}" alt="${escapeHtml(s.title)}" loading="lazy">
-            <div class="story-overlay"></div>
-            <div class="story-top-bar">
-              <span class="story-cat-badge ${escapeHtml(s.badgeClass || 'badge-health')}">${escapeHtml(s.category)}</span>
-              <div class="story-play-indicator">▶</div>
-            </div>
-            <div class="story-body">
-              <h2 class="story-title">${escapeHtml(s.title)}</h2>
-              <div class="story-meta">
-                <span>${s.date ? escapeHtml(s.date) : 'ఆగస్టు 2026'}</span>
-                <span class="story-read-action">చూడండి →</span>
+        const html = stories.map(s => {
+          const badgeClass = s.badgeClass || getBadgeClass(s.category);
+          const formattedDate = s.date ? escapeHtml(s.date) : 'ఆగస్టు 2026';
+          return `
+            <a href="${escapeHtml(s.url)}" class="tp-story-card" data-cat="${escapeHtml(s.category || '')}">
+              <img class="tp-poster-img" src="${escapeHtml(s.image)}" alt="${escapeHtml(s.title)}" loading="lazy">
+              <div class="tp-story-overlay"></div>
+              <div class="tp-story-top">
+                <span class="tp-cat-badge ${badgeClass}">${escapeHtml(s.category || 'జనరల్')}</span>
+                <div class="tp-play-btn" title="ప్లే చేయండి">
+                  <svg width="10" height="10"><use href="#ic-play"/></svg>
+                </div>
               </div>
-            </div>
-          </a>
-        `).join('');
+              <div class="tp-story-body">
+                <h2 class="tp-story-title">${escapeHtml(s.title)}</h2>
+                <div class="tp-story-meta">
+                  <span>${formattedDate}</span>
+                  <span class="tp-read-action">చూడండి →</span>
+                </div>
+              </div>
+            </a>
+          `;
+        }).join('');
 
         storiesGrid.innerHTML = html;
       }
 
+      // 4. FILTER LOGIC
       function applyFilter() {
         const filtered = allStories.filter(s => {
           const title = (s.title || '').toLowerCase();
           const cat = (s.category || '');
           const matchesCat = (currentCat === 'all' || cat.includes(currentCat) || currentCat.includes(cat));
-          const matchesSearch = title.includes(searchQuery);
+          const matchesSearch = !searchQuery || title.includes(searchQuery);
           return matchesCat && matchesSearch;
         });
         renderStories(filtered);
       }
 
-      // Fetch dynamic stories.json
+      // 5. FETCH STORIES
+      if (progressBar) progressBar.style.width = '40%';
+      
       fetch('./stories.json')
         .then(res => {
           if (!res.ok) throw new Error('Status ' + res.status);
           return res.json();
         })
         .then(data => {
+          if (progressBar) {
+            progressBar.style.width = '100%';
+            setTimeout(() => { progressBar.style.width = '0%'; }, 300);
+          }
           allStories = data || [];
           applyFilter();
         })
@@ -668,15 +463,17 @@
           fetch('https://stories.telugupublic.com/stories.json')
             .then(r => r.json())
             .then(data => {
+              if (progressBar) progressBar.style.width = '100%';
               allStories = data || [];
               applyFilter();
+              setTimeout(() => { if (progressBar) progressBar.style.width = '0%'; }, 300);
             })
             .catch(e => {
               countBar.textContent = 'కథనాలు లోడ్ చేయడంలో సమస్య ఏర్పడింది.';
             });
         });
 
-      // Category Pill Click Handler
+      // 6. CATEGORY FILTER BUTTONS
       catBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           catBtns.forEach(b => b.classList.remove('active'));
@@ -686,12 +483,127 @@
         });
       });
 
-      // Live Search Handler
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim().toLowerCase();
-        applyFilter();
+      // Category links in nav and footer
+      document.querySelectorAll('[data-cat-link]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const cat = link.getAttribute('data-cat-link');
+          currentCat = cat;
+          catBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-cat') === cat));
+          applyFilter();
+          window.scrollTo({ top: document.querySelector('.tp-hero').offsetTop - 20, behavior: 'smooth' });
+        });
       });
-    });
+
+      // 7. HERO SEARCH INPUT
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          if (searchClear) {
+            searchClear.style.display = searchQuery.length > 0 ? 'block' : 'none';
+          }
+          applyFilter();
+        });
+      }
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          searchInput.value = '';
+          searchQuery = '';
+          searchClear.style.display = 'none';
+          searchInput.focus();
+          applyFilter();
+        });
+      }
+
+      // 8. COMMAND PALETTE (Ctrl + K / Cmd + K)
+      function openPalette() {
+        if (!paletteBackdrop) return;
+        paletteBackdrop.classList.add('active');
+        paletteBackdrop.setAttribute('aria-hidden', 'false');
+        if (paletteInput) {
+          paletteInput.value = '';
+          renderPaletteResults('');
+          setTimeout(() => paletteInput.focus(), 50);
+        }
+      }
+
+      function closePalette() {
+        if (!paletteBackdrop) return;
+        paletteBackdrop.classList.remove('active');
+        paletteBackdrop.setAttribute('aria-hidden', 'true');
+      }
+
+      function renderPaletteResults(query) {
+        if (!paletteResults) return;
+        const q = (query || '').trim().toLowerCase();
+        const matches = allStories.filter(s => {
+          return !q || (s.title || '').toLowerCase().includes(q) || (s.category || '').toLowerCase().includes(q);
+        }).slice(0, 8);
+
+        if (matches.length === 0) {
+          paletteResults.innerHTML = `
+            <div style="padding:28px 16px;text-align:center;color:var(--text-muted);font-size:0.9rem;">
+              ఎటువంటి కథనాలు దొరకలేదు
+            </div>`;
+          return;
+        }
+
+        paletteResults.innerHTML = matches.map(s => `
+          <a href="${escapeHtml(s.url)}" class="tp-palette-item">
+            <img class="tp-palette-item-img" src="${escapeHtml(s.image)}" alt="" />
+            <div class="tp-palette-item-info">
+              <div class="tp-palette-item-title">${escapeHtml(s.title)}</div>
+              <div class="tp-palette-item-meta">
+                <span>${escapeHtml(s.category || 'జనరల్')}</span>
+                <span>•</span>
+                <span>${s.date ? escapeHtml(s.date) : 'ఆగస్టు 2026'}</span>
+              </div>
+            </div>
+            <span style="color:var(--brand-green);font-size:0.8rem;font-weight:700;">చూడండి →</span>
+          </a>
+        `).join('');
+      }
+
+      if (navSearchTrigger) navSearchTrigger.addEventListener('click', openPalette);
+      if (mobileSearchTrigger) mobileSearchTrigger.addEventListener('click', openPalette);
+      if (paletteClose) paletteClose.addEventListener('click', closePalette);
+
+      if (paletteBackdrop) {
+        paletteBackdrop.addEventListener('click', (e) => {
+          if (e.target === paletteBackdrop) closePalette();
+        });
+      }
+
+      if (paletteInput) {
+        paletteInput.addEventListener('input', (e) => {
+          renderPaletteResults(e.target.value);
+        });
+      }
+
+      // Keyboard Shortcut listener (Ctrl+K, Cmd+K, Escape)
+      window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          if (paletteBackdrop && paletteBackdrop.classList.contains('active')) {
+            closePalette();
+          } else {
+            openPalette();
+          }
+        }
+        if (e.key === 'Escape' && paletteBackdrop && paletteBackdrop.classList.contains('active')) {
+          closePalette();
+        }
+      });
+
+      // 9. BACK TO TOP
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+    })();
   </script>
 
 </body>
