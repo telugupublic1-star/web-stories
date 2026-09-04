@@ -52,7 +52,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4638319772065994" crossorigin="anonymous"></script>
@@ -485,10 +485,11 @@
         renderStories(filtered);
       }
 
-      // 5. FETCH STORIES
+      // 5. FETCH STORIES (Cache-busted to guarantee immediate updates)
       if (progressBar) progressBar.style.width = '40%';
       
-      fetch('./stories.json')
+      const feedUrl = './stories.json?t=' + Date.now();
+      fetch(feedUrl)
         .then(res => {
           if (!res.ok) throw new Error('Status ' + res.status);
           return res.json();
@@ -503,7 +504,7 @@
         })
         .catch(err => {
           console.warn('Fallback loading:', err);
-          fetch('https://stories.telugupublic.com/stories.json')
+          fetch('https://stories.telugupublic.com/stories.json?t=' + Date.now())
             .then(r => r.json())
             .then(data => {
               if (progressBar) progressBar.style.width = '100%';
