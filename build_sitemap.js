@@ -56,13 +56,13 @@ const urls = files.map(file => {
   } else if (file.includes('narasimha') || file.includes('ashtottaram') || file.includes('spiritual') || file.includes('hanuman')) {
     category = 'ఆధ్యాత్మికం';
     badgeClass = 'badge-devotional';
-  } else if (file.includes('kisan') || file.includes('schemes') || file.includes('govt')) {
+  } else if (file.includes('kisan') || file.includes('schemes') || file.includes('govt') || file.includes('surya') || file.includes('yojana')) {
     category = 'ప్రభుత్వ పథకాలు';
     badgeClass = 'badge-schemes';
   } else if (file.includes('appsc') || file.includes('job') || file.includes('education')) {
     category = 'ఉద్యోగాలు';
     badgeClass = 'badge-jobs';
-  } else if (file.includes('mutual') || file.includes('sip') || file.includes('finance') || file.includes('stock') || file.includes('upi') || file.includes('atm')) {
+  } else if (file.includes('mutual') || file.includes('sip') || file.includes('finance') || file.includes('stock') || file.includes('upi') || file.includes('atm') || file.includes('cibil') || file.includes('credit')) {
     category = 'ఫైనాన్స్';
     badgeClass = 'badge-finance';
   }
