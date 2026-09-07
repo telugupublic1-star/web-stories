@@ -67,27 +67,34 @@ const urls = files.map(file => {
     badgeClass = 'badge-finance';
   }
 
-  storiesData.push({
-    title,
-    category,
-    badgeClass,
-    url: `https://stories.telugupublic.com/${file}`,
-    image: posterUrl,
-    date: lastmod
-  });
 
   const imageTag = posterMatch && posterMatch[1] ? `
     <image:image>
       <image:loc>${escapeXml(posterMatch[1])}</image:loc>
     </image:image>` : '';
 
-  return `  <url>
+  const xmlEntry = `  <url>
     <loc>https://stories.telugupublic.com/${file}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>${imageTag}
   </url>`;
-}).join('\n');
+
+  storiesData.push({
+    title,
+    category,
+    badgeClass,
+    url: `https://stories.telugupublic.com/${file}`,
+    image: posterUrl,
+    date: lastmod,
+    xmlEntry
+  });
+});
+
+// Sort stories newest first by date
+storiesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const sortedUrls = storiesData.map(s => s.xmlEntry).join('\n');
 
 // 1. Generate sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -99,16 +106,17 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-${urls}
+${sortedUrls}
 </urlset>`;
 
 fs.writeFileSync(path.join(storiesDir, 'sitemap.xml'), sitemap, 'utf8');
 
-// Sort stories newest first by date
-storiesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+// Clean up xmlEntry before saving JSON
+const jsonFeed = storiesData.map(({ xmlEntry, ...rest }) => rest);
 
 // 2. Generate stories.json (Dynamic Feed for Main Website)
-fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(storiesData, null, 2), 'utf8');
+fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(jsonFeed, null, 2), 'utf8');
 
 console.log(`✅ sitemap.xml generated with ${files.length + 1} URLs!`);
-console.log(`✅ stories.json dynamic feed generated with ${storiesData.length} stories!`);
+console.log(`✅ stories.json dynamic feed generated with ${jsonFeed.length} stories!`);
+
