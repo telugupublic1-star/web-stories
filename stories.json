@@ -1,21 +1,5 @@
 [
   {
-    "title": "శ్రీ లక్ష్మీ నరసింహ స్వామి అష్టోత్తర శతనామావళి",
-    "category": "ఆధ్యాత్మికం",
-    "badgeClass": "badge-devotional",
-    "url": "https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html",
-    "image": "https://stories.telugupublic.com/images/lakshmi_narasimha.webp",
-    "date": "2026-09-04"
-  },
-  {
-    "title": "డెబిట్ కార్డు లేకుండా UPI ATM నుండి డబ్బు ఎలా తీయాలి?",
-    "category": "ఫైనాన్స్",
-    "badgeClass": "badge-finance",
-    "url": "https://stories.telugupublic.com/upi-atm-cardless-cash-withdrawal-telugu.html",
-    "image": "https://stories.telugupublic.com/images/upi_atm_withdrawal.webp",
-    "date": "2026-09-04"
-  },
-  {
     "title": "కిడ్నీలో రాళ్ళు రాకుండా ఉండాలంటే 5 ముఖ్యమైన జాగ్రత్తలు",
     "category": "ఆరోగ్యం",
     "badgeClass": "badge-health",
@@ -53,6 +37,22 @@
     "badgeClass": "badge-festival",
     "url": "https://stories.telugupublic.com/sravana-sukravaram-varalakshmi-vratham-telugu.html",
     "image": "https://stories.telugupublic.com/images/varalakshmi_vratham.webp",
+    "date": "2026-09-04"
+  },
+  {
+    "title": "శ్రీ లక్ష్మీ నరసింహ స్వామి అష్టోత్తర శతనామావళి",
+    "category": "ఆధ్యాత్మికం",
+    "badgeClass": "badge-devotional",
+    "url": "https://stories.telugupublic.com/sri-lakshmi-narasimha-ashtottaram.html",
+    "image": "https://stories.telugupublic.com/images/lakshmi_narasimha.webp",
+    "date": "2026-09-04"
+  },
+  {
+    "title": "డెబిట్ కార్డు లేకుండా UPI ATM నుండి డబ్బు ఎలా తీయాలి?",
+    "category": "ఫైనాన్స్",
+    "badgeClass": "badge-finance",
+    "url": "https://stories.telugupublic.com/upi-atm-cardless-cash-withdrawal-telugu.html",
+    "image": "https://stories.telugupublic.com/images/upi_atm_withdrawal.webp",
     "date": "2026-09-04"
   },
   {
