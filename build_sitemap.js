@@ -44,7 +44,7 @@ const urls = files.map(file => {
   let title = file.replace(/-/g, ' ').replace('.html', '');
   const titleMatch = content.match(/<title>([^<|]+)/);
   if (titleMatch && titleMatch[1]) {
-    title = titleMatch[1].trim();
+    title = titleMatch[1].replace(/&amp;/g, '&').trim();
   }
 
   // Extract brand / category

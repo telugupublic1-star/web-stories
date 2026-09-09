@@ -1,4 +1,10 @@
 {
+  "name": "telugupublic-webstories",
+  "version": "1.0.0",
+  "scripts": {
+    "validate": "node validate_stories.js",
+    "build": "node build_sitemap.js"
+  },
   "devDependencies": {
     "sharp": "^0.35.4"
   }

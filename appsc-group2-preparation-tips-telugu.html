@@ -56,44 +56,82 @@
   <style amp-custom>
     * { box-sizing: border-box; font-family: 'Mandali', sans-serif; }
     amp-story-page { background-color: #0b0f19; }
+        /* Dynamic Grid Layer Positioning */
+    amp-story-grid-layer.bottom {
+      align-content: end;
+      justify-content: flex-end;
+      padding-bottom: 24px;
+    }
+    amp-story-grid-layer.top {
+      align-content: start;
+      justify-content: flex-start;
+      padding-top: 55px;
+    }
+    amp-story-grid-layer.center {
+      align-content: center;
+      justify-content: center;
+    }
     .tp-card {
-      background: rgba(15, 23, 42, 0.84);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 20px;
-      padding: 24px 20px;
-      margin: 16px;
+      background: rgba(15, 23, 42, 0.28);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      padding: 12px 16px 14px 16px;
+      margin: 0 10px 10px 10px;
       color: #ffffff;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.85);
     }
     .tp-brand {
       display: inline-flex;
       align-items: center;
       background: linear-gradient(135deg, #9333EA, #7E22CE);
       color: #fff;
-      padding: 6px 14px;
+      padding: 4px 10px;
       border-radius: 30px;
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
       box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
     }
     .tp-badge-gold { background: linear-gradient(135deg, #F59E0B, #D97706); color: #fff; }
-    h1.tp-title { font-size: 25px; line-height: 1.35; font-weight: 700; color: #ffffff; margin: 0 0 12px 0; }
-    h2.tp-heading { font-size: 22px; line-height: 1.35; font-weight: 700; color: #F8FAFC; margin: 0 0 10px 0; }
-    p.tp-desc { font-size: 16px; line-height: 1.6; color: #E2E8F0; margin: 0 0 14px 0; }
-    .tp-points { list-style: none; padding: 0; margin: 0 0 16px 0; }
-    .tp-points li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 15px; line-height: 1.5; color: #CBD5E1; }
+    h1.tp-title { font-size: 21px; line-height: 1.3; font-weight: 700; color: #ffffff; margin: 0 0 6px 0; }
+    h2.tp-heading { font-size: 19px; line-height: 1.3; font-weight: 700; color: #F8FAFC; margin: 0 0 6px 0; }
+    p.tp-desc { font-size: 14px; line-height: 1.45; color: #F1F5F9; margin: 0 0 8px 0; }
+    .tp-points { list-style: none; padding: 0; margin: 0 0 4px 0; }
+    .tp-points li { position: relative; padding-left: 20px; margin-bottom: 5px; font-size: 13.5px; line-height: 1.4; color: #E2E8F0; }
     .tp-points li::before { content: "🎯"; position: absolute; left: 0; top: 0; font-size: 13px; }
     .gradient-overlay {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(11,15,25,0.2) 0%, rgba(11,15,25,0.65) 50%, rgba(11,15,25,0.95) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(11,15,25,0.45) 75%, rgba(11,15,25,0.85) 100%);
+      pointer-events: none;
+    }
+    .gradient-overlay.top {
+      background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(11,15,25,0.45) 75%, rgba(11,15,25,0.85) 100%);
     }
   </style>
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="APPSC గ్రూప్ 2 ప్రిపరేషన్: మొదటి ప్రయత్నంలోనే విజయం సాధించే 5 టిప్స్ | Telugu Public">
+  <meta property="og:description" content="APPSC గ్రూప్ 2 పరీక్షలో అత్యుత్తమ ర్యాంక్ సాధించడానికి సిలబస్ విశ్లేషణ, టైమ్ టేబుల్ మరియు రివిజన్ స్ట్రాటజీ.">
+  <meta property="og:url" content="https://stories.telugupublic.com/appsc-group2-preparation-tips-telugu.html">
+  <meta property="og:site_name" content="Telugu Public Web Stories">
+  <meta property="og:image" content="https://stories.telugupublic.com/images/appsc_group2.webp">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1920">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="APPSC గ్రూప్ 2 ప్రిపరేషన్: మొదటి ప్రయత్నంలోనే విజయం సాధించే 5 టిప్స్ | Telugu Public">
+  <meta name="twitter:description" content="APPSC గ్రూప్ 2 పరీక్షలో అత్యుత్తమ ర్యాంక్ సాధించడానికి సిలబస్ విశ్లేషణ, టైమ్ టేబుల్ మరియు రివిజన్ స్ట్రాటజీ.">
+  <meta name="twitter:image" content="https://stories.telugupublic.com/images/appsc_group2.webp">
+
 </head>
 <body>
   <amp-story
+    supports-landscape
     standalone
     title="APPSC గ్రూప్ 2 ప్రిపరేషన్ టిప్స్ | Telugu Public"
     publisher="Telugu Public"
@@ -108,7 +146,8 @@
       {
         "ad-attributes": {
           "type": "adsense",
-          "data-ad-client": "ca-pub-4638319772065994"
+          "data-ad-client": "ca-pub-4638319772065994",
+          "data-ad-slot": "1625885899"
         }
       }
       </script>
@@ -179,7 +218,7 @@
     <amp-story-page id="final-cta">
       <amp-story-grid-layer template="fill">
         <amp-img src="https://stories.telugupublic.com/images/appsc_study_material.webp"
-          width="1080" height="1920" layout="responsive" alt="Success"></amp-img>
+          width="1080" height="1920" layout="responsive" alt="APPSC ఉద్యోగ సమాచారం మరియు స్టడీ మెటీరియల్"></amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
         <div class="gradient-overlay"></div>
@@ -189,13 +228,13 @@
           <div class="tp-brand">ఉద్యోగ సమాచారం</div>
           <h2 class="tp-heading">స్టడీ మెటీరియల్ &amp; ఉద్యోగ వార్తలు</h2>
           <p class="tp-desc">APPSC తాజా నోటిఫికేషన్లు, సిలబస్ PDFలు మరియు ఎగ్జామ్ డేట్స్ పూర్తి వివరాల కోసం మా జాబ్స్ సెక్షన్ చూడండి.</p>
+          <p style="font-size: 11px; color: #94A3B8; text-align: center; margin: 10px 0 0 0;">⚠️ గమనిక: సిలబస్, తేదీల కోసం psc.ap.gov.in అధికారిక నోటిఫికేషన్లను సరిచూసుకోండి.</p>
         </div>
       </amp-story-grid-layer>
       
       <amp-story-page-outlink layout="nodisplay" theme="custom" cta-accent-element="background" cta-accent-color="#16A34A">
         <a href="https://www.telugupublic.com/search/label/Government%20Jobs" title="ఉద్యోగ సమాచారం చూడండి">ఉద్యోగ సమాచారం చూడండి →</a>
       </amp-story-page-outlink>
-      <p style="font-size: 11px; color: #94A3B8; text-align: center; margin-top: 10px;">⚠️ గమనిక: సిలబస్, తేదీల కోసం psc.ap.gov.in అధికారిక నోటిఫికేషన్లను సరిచూసుకోండి.</p>
     </amp-story-page>
 
   </amp-story>

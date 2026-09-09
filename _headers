@@ -1,6 +1,6 @@
 /*
   Access-Control-Allow-Origin: *
-  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self' https://*.google.com https://*.google https://*.googleusercontent.com https://*.telugupublic.com https://telugupublic.com;
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
