@@ -62,15 +62,20 @@ const urls = files.map(file => {
   } else if (file.includes('appsc') || file.includes('job') || file.includes('education')) {
     category = 'ఉద్యోగాలు';
     badgeClass = 'badge-jobs';
-  } else if (file.includes('mutual') || file.includes('sip') || file.includes('finance') || file.includes('stock') || file.includes('upi') || file.includes('atm') || file.includes('cibil') || file.includes('credit')) {
+  } else if (file.includes('mutual') || file.includes('sip') || file.includes('finance') || file.includes('stock') || file.includes('upi') || file.includes('atm') || file.includes('cibil') || file.includes('credit') || file.includes('gold')) {
     category = 'ఫైనాన్స్';
     badgeClass = 'badge-finance';
   }
 
+  // Ensure absolute URL for cross-origin consumers (like telugupublic.com main site) and XML sitemap
+  let absoluteImageUrl = posterUrl;
+  if (!absoluteImageUrl.startsWith('http')) {
+    absoluteImageUrl = 'https://stories.telugupublic.com/' + absoluteImageUrl.replace(/^\.\//, '').replace(/^\//, '');
+  }
 
   const imageTag = posterMatch && posterMatch[1] ? `
     <image:image>
-      <image:loc>${escapeXml(posterMatch[1])}</image:loc>
+      <image:loc>${escapeXml(absoluteImageUrl)}</image:loc>
     </image:image>` : '';
 
   const xmlEntry = `  <url>
@@ -85,7 +90,7 @@ const urls = files.map(file => {
     category,
     badgeClass,
     url: `https://stories.telugupublic.com/${file}`,
-    image: posterUrl,
+    image: absoluteImageUrl,
     date: lastmod,
     xmlEntry
   });
