@@ -56,7 +56,7 @@ const urls = files.map(file => {
   } else if (file.includes('narasimha') || file.includes('ashtottaram') || file.includes('spiritual') || file.includes('hanuman')) {
     category = 'ఆధ్యాత్మికం';
     badgeClass = 'badge-devotional';
-  } else if (file.includes('kisan') || file.includes('schemes') || file.includes('scheme') || file.includes('govt') || file.includes('surya') || file.includes('yojana') || file.includes('pension') || file.includes('bharosa') || file.includes('ntr')) {
+  } else if (file.includes('kisan') || file.includes('schemes') || file.includes('govt') || file.includes('surya') || file.includes('yojana')) {
     category = 'ప్రభుత్వ పథకాలు';
     badgeClass = 'badge-schemes';
   } else if (file.includes('appsc') || file.includes('job') || file.includes('education')) {
