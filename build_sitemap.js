@@ -117,11 +117,16 @@ ${sortedUrls}
 fs.writeFileSync(path.join(storiesDir, 'sitemap.xml'), sitemap, 'utf8');
 
 // Clean up xmlEntry before saving JSON
-const jsonFeed = storiesData.map(({ xmlEntry, ...rest }) => rest);
+const jsonFeedAll = storiesData.map(({ xmlEntry, ...rest }) => rest);
 
-// 2. Generate stories.json (Dynamic Feed for Main Website)
-fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(jsonFeed, null, 2), 'utf8');
+// 2. Generate stories-all.json (Complete catalog for stories.telugupublic.com portal)
+fs.writeFileSync(path.join(storiesDir, 'stories-all.json'), JSON.stringify(jsonFeedAll, null, 2), 'utf8');
+
+// 3. Generate stories.json (5 Latest Stories feed for Main Website telugupublic.com)
+const jsonFeedLatest5 = jsonFeedAll.slice(0, 5);
+fs.writeFileSync(path.join(storiesDir, 'stories.json'), JSON.stringify(jsonFeedLatest5, null, 2), 'utf8');
 
 console.log(`✅ sitemap.xml generated with ${files.length + 1} URLs!`);
-console.log(`✅ stories.json dynamic feed generated with ${jsonFeed.length} stories!`);
+console.log(`✅ stories-all.json generated with ${jsonFeedAll.length} stories!`);
+console.log(`✅ stories.json (main website feed) generated with ${jsonFeedLatest5.length} latest stories!`);
 

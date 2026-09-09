@@ -497,7 +497,7 @@
       // 5. FETCH STORIES (Cache-busted to guarantee immediate updates)
       if (progressBar) progressBar.style.width = '40%';
       
-      const feedUrl = './stories.json?t=' + Date.now();
+      const feedUrl = './stories-all.json?t=' + Date.now();
       fetch(feedUrl)
         .then(res => {
           if (!res.ok) throw new Error('Status ' + res.status);
@@ -512,8 +512,8 @@
           applyFilter();
         })
         .catch(err => {
-          console.warn('Fallback loading:', err);
-          fetch('https://stories.telugupublic.com/stories.json?t=' + Date.now())
+          console.warn('Fallback loading stories-all.json:', err);
+          fetch('https://stories.telugupublic.com/stories-all.json?t=' + Date.now())
             .then(r => r.json())
             .then(data => {
               if (progressBar) progressBar.style.width = '100%';
@@ -522,7 +522,15 @@
               setTimeout(() => { if (progressBar) progressBar.style.width = '0%'; }, 300);
             })
             .catch(e => {
-              countBar.textContent = 'కథనాలు లోడ్ చేయడంలో సమస్య ఏర్పడింది.';
+              fetch('https://stories.telugupublic.com/stories.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                  allStories = data || [];
+                  applyFilter();
+                })
+                .catch(() => {
+                  countBar.textContent = 'కథనాలు లోడ్ చేయడంలో సమస్య ఏర్పడింది.';
+                });
             });
         });
 
