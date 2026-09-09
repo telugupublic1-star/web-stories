@@ -68,6 +68,7 @@
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
   <script async custom-element="amp-story-auto-ads"
     src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
   <style amp-boilerplate>
     body {
@@ -279,6 +280,33 @@
       }
       </script>
     </amp-story-auto-ads>
+    <!-- GOOGLE ANALYTICS 4 (GA4) -->
+    <amp-analytics type="gtag" id="analytics-ga4">
+      <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "G-XJ2TYSGJVZ",
+          "config": {
+            "G-XJ2TYSGJVZ": { "groups": "default" }
+          }
+        },
+        "triggers": {
+          "storyProgress": {
+            "on": "story-page-visible",
+            "request": "page_view"
+          },
+          "storyEnd": {
+            "on": "story-last-page-visible",
+            "request": "event",
+            "vars": {
+              "event_name": "story_complete"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
 
     <!-- SLIDE 1: COVER (Artwork in bottom half -> Text at TOP) -->
     <amp-story-page id="cover" auto-advance-after="7s">

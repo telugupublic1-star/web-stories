@@ -40,6 +40,8 @@ for (const file of files) {
   if (!content.includes('name="twitter:card"')) issues.push('Missing twitter:card');
   if (!content.includes('max-image-preview:large')) issues.push('Missing max-image-preview:large');
   if (!content.includes('application/ld+json')) issues.push('Missing Schema.org JSON-LD');
+  if (!content.includes('custom-element="amp-analytics"')) issues.push('Missing amp-analytics script');
+  if (!content.includes('id="analytics-ga4"')) issues.push('Missing GA4 analytics tag');
 
   const titleMatch = content.match(/<amp-story[^>]*\btitle="([^"]+)"/);
   if (!titleMatch) {
